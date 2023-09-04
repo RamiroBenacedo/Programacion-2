@@ -26,3 +26,14 @@ updatedAt               TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_
 deletedAt               TIMESTAMP 		NULL,
 FOREIGN KEY (clienteId) REFERENCES usuario (idUsuario)
 );
+CREATE TABLE tabladecomentario (
+/* nombreDeColumna  tipoDeDato  restricciones */
+id       		INT         	UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+Idpost				INT UNSIGNED,
+idusuario          INT UNSIGNED,
+campoTextoNombreImg		VARCHAR(200)	NOT NULL,
+clavesforranea          TIMESTAMP DEFAULT current_timestamp,
+updatedAt               TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+deletedAt               TIMESTAMP 		NULL,
+FOREIGN KEY (idpost) REFERENCES posteos(id),
+FOREIGN KEY (idusuario)REFERENCES usuario(id));
