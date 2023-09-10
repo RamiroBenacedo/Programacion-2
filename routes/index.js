@@ -1,10 +1,11 @@
 var express = require('express');
+const socialController = require('../controllers/socialController');
 var router = express.Router();
 const data = require("../db/data")
 
 
 /* GET home page. */
-router.get('/', )
+router.get('/', socialController.index )
 
 router.get('/miperfil/id/:id', )
 
