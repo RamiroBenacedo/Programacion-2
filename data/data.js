@@ -1,9 +1,9 @@
 const data = {
-    usuarios : [
+    usuarios: [
         {
             id: 1,
-            email:'pablo@gmail.com',
-            clave:'pablo',
+            email: 'pablo@gmail.com',
+            clave: 'pablo',
             fotoPerfil: '../public/img/pablo.jpg',
             fecha: '15/12/1865',
             dni: '44986213'
@@ -29,7 +29,7 @@ const data = {
 
         {
             id: 4,
-            email:'paula@gmail.com',
+            email: 'paula@gmail.com',
             clave: 'paula',
             fotoPerfil: '../public/img/paula.jpg',
             fecha: '28/10/1970',
@@ -41,7 +41,7 @@ const data = {
             email: 'franco@gmail.com',
             clave: 'franco',
             fotoPerfil: '../public/img/franco.jpg',
-            fecha:'03/03/2003',
+            fecha: '03/03/2003',
             dni: '46257465'
         },
 
@@ -89,6 +89,40 @@ const data = {
             fecha: '18/08/1980',
             dni: '38965417'
         },
+    ],
+    posteos: [{
+        id: 1,
+        clienteid: 1,
+        textonombre: "mercedez benz",
+        textoposteo: "color negro",
+    },
+    {
+        id: 1,
+        clienteid: 1,
+        textonombre: "mercedez benz",
+        textoposteo: "color negro",
+    },
+    {
+        id: 1,
+        clienteid: 1,
+        textonombre: "mercedez benz",
+        textoposteo: "color negro",
+    },
+    {
+        id: 1,
+        clienteid: 1,
+        textonombre: "mercedez benz",
+        textoposteo: "color negro",
+    },
+    {
+        id: 1,
+        clienteid: 1,
+        textonombre: "mercedez benz",
+        textoposteo: "color negro",
+    },
     ]
+
+
+
 
 }

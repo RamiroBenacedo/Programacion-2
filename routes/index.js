@@ -5,7 +5,7 @@ const data = require("../db/data")
 
 
 /* GET home page. */
-router.get('/', socialController.index )
+router.get('/', usersController.index )
 
 router.get('/miperfil/id/:id', )
 
@@ -21,7 +21,6 @@ router.get('/detallepost/id/:id', )
 
 router.get('/detalleusuario/id/:id', )
 
-router.get('/agregarpost/id/:id', )
-
+router.get('/', )
 
 module.exports = router;

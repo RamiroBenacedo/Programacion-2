@@ -27,7 +27,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #fff;
+    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
 }
 .main-nav {
     display: flex;
@@ -44,7 +44,7 @@ header {
     font-size: 18px;
 }
 .search {
-    background-color: #EBEDF0;
+    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
     padding: 10px;
     border-radius: 10px;
     width: 300px;
@@ -76,7 +76,7 @@ header {
 
 /* Main */
 main {
-    background-color: #fafafa;
+    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -91,7 +91,7 @@ main {
 
 /* post */
 .post{
-    background-color: #fff;
+    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
     border: 1px solid #ddd;
     border-radius: 10px;
     color: #777;
@@ -154,7 +154,7 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
     border-top: 1px solid #ddd;
     padding: 20px 10px;
 }
@@ -208,7 +208,7 @@ main {
     line-height: 1;
 }
 .comment-form{
-    background: #fff;
+    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
     padding: 15px 5px 10px;
     display: flex;
     flex-direction: column;
@@ -227,7 +227,7 @@ main {
     background-color:mediumseagreen;
     border: 1px solid mediumaquamarine;
     border-radius: 5px;
-    color: #fff;
+    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
 }
 .comment-form button:hover {
     cursor: pointer;
@@ -275,7 +275,7 @@ main {
     background-color: mediumseagreen;
     border: 1px solid mediumaquamarine;
     border-radius: 5px;
-    color: #fff;
+    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
     margin-left: 20px;
 }
 .follow:hover{
