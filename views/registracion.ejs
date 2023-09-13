@@ -9,7 +9,31 @@
     <main>
         <section class="center main-content">
         <h1>Regsitrate</h1>
-        <p>Crear el formulario para registrar un nuevo usuario.</p>
+        <form class="formuRegister" action="/register" method="post">
+            <label class="label"  for="email">Email:</label>
+            <input class="input" type="email" id="email" name="email"><br>
+          
+            <label class="label" for="usuario"> Usuario:</label>
+            <input  class="input" type="text" id="usuario" name="usuario"><br>
+          
+            <label class="label"  for="Contrasena">Contraseña:</label>
+            <input class="input"  type="password" id="contraseña" name="contraseña"><br>
+          
+            <label class="label"  for="Fecha de nacimiento">Fecha de Nacimiento:</label>
+            <input  class="input" type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br>
+          
+            <label class="label"  for="Nro de documento">Nro de Documento:</label>
+            <input  class="input" type="number" id="nro_documento" name="nro_documento"><br>
+          
+            <label class="label"  for="Foto de perfil">Foto de Perfil:</label>
+            <input  class="input" type="text" id="foto_perfil" name="foto_perfil"><br>
+            
+            <% if (error != "") { %>
+                <h2> <%= error %></h2>
+              <% } %>
+          
+            <input class="submit" type="submit" value="Enviar">
+          </form>
         </section>
     </main>
 

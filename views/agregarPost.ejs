@@ -10,7 +10,21 @@
     <main>
         <section class="center main-content">
         <h1>Nuevo Post</h1>
-        <p>Crear el formulario para cargar un nuevo posteo.</p>
+        <form class="formRegister" action="/productos/agregarProducto"  method="POST">
+            <label class="label" for="Imagen">Imagen:</label>
+            <input class="input" type="text" id="imagen" name="imagen"><br>
+          
+            <label class="label"  for="Nombre del producto"> Nombre del producto:</label>
+            <input  class="input" type="text" id="nombreProducto" name="nombreProducto"><br>
+          
+            <label class="label"  for="Descripción">Descripción:</label>
+            <input class="input"  type="text" id="descripcion" name="descripcion"><br>
+          
+            <label class="label"  for="Fecha de carga">Fecha de carga:</label>
+            <input  class="input" type="date" id="fecha" name="fecha"><br>
+          
+            <input class="submit" type="submit" value="Enviar">
+          </form>
         </section>
     </main>
 
