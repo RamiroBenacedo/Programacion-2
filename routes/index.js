@@ -1,26 +1,14 @@
 var express = require('express');
-const socialController = require('../controllers/usersController');
+const mainController = require('../controllers/mainController');
 var router = express.Router();
-const data = require("../db/data")
-
 
 /* GET home page. */
-router.get('/', usersController.index )
+router.get('/', mainController.index);
 
-router.get('/miperfil/id/:id', )
+router.get('/login', mainController.login);
 
-router.get('/miperfil/login/id/:id', )
+router.get('/registracion', mainController.registro);
 
-router.get('/miperfil/registracion/id/:id', )
-
-router.get('/miperfil/editarperfil/id/:id', )
-
-router.get('/resultadobusqueda/id/:id', )
-
-router.get('/detallepost/id/:id', )
-
-router.get('/detalleusuario/id/:id', )
-
-router.get('/', )
+router.get('/resultadoBusqueda', mainController.resultadoBusqueda);
 
 module.exports = router;

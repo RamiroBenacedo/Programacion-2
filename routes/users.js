@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const data = require("../db/data")
+const usersController = require("'../controllers/usersController'")
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Welcome to the future of internet' });
-});
+router.get('/miPerfil/id/:id?', usersController.miPerfil);
 
+router.get('/editarPerfil/id/:id', usersController.editarPerfil);
+
+router.get('/detalleUsuario/id/:id', usersController.detalleusuario);
 
 
 module.exports = router;

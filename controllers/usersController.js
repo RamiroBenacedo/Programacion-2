@@ -1,11 +1,19 @@
-const datos = require("../db/data")
+const data = require("../db/data")
 
-const socialController = {
-    index: function (req, res) {
-        return res.render ('index', {lista: datos.usuarios})
+const usersController = {
+    miPerfil: function (req, res, next) {
+        res.render ('miPerfil', {lista: data.usuarios, posteos: data.posteos});
     },
 
-}
+    editarPerfil: function(req, res, next) {
+        res.render('editarPerfil', title = 'Express');
+    },
 
-module.exports = socialController
+    detalleUsuario: function (req, res, next) {
+        let id = req.params.id
+        res.render ('detalleusuario', {idUsuario: id, usuario: data.usuarios, posteo: data.posteos});
+    }
+};
+
+module.exports = usersController
 
