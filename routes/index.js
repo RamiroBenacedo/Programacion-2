@@ -1,5 +1,5 @@
 var express = require('express');
-const socialController = require('../controllers/socialController');
+const socialController = require('../controllers/usersController');
 var router = express.Router();
 const data = require("../db/data")
 
