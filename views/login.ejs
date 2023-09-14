@@ -10,39 +10,20 @@
             <main>
                 <section class="center main-content">
                     <h1>Login</h1>
+                    <form action="/users/miPerfil/id/1" method="GET">
+                        <label  for="email"> Email:</label>
+                        <input  type="email" id="email" name="email" value="" required>
+                        
+                        <label  for="clave"> Clave:</label>
+                        <input  type="password" id="clave" name="clave" value="" required>
+
+                        <button type="submit">Enviar</button>
+                    </form>
                 </section>
             </main>
-            <form class="formuRegister" action="/" method="post">
 
-                <label class="label" for="Usuario"> Email:</label>
-                <input class="input" type="text" id="usuario" name="email"><br>
+        <%- include('./partials/footer') %>
 
-                <label class="label" for="Contrasena">Contraseña:</label>
-                <input class="input" type="password" id="contraseña" name="contrasenia"><br>
-
-                <label class="label" for="Recordarme">Recordarme: </label>
-                <input class="input" type="checkbox" id="recordarme" name="recordarme">
-
-                <% if (mensaje) { %>
-                    <h2>
-                        <%= mensaje %>
-                    </h2>
-                    <% } %>
-                        </section>
-
-
-                        <footer class="main-footer">
-                            <ul class="social">
-                                <li><a href="" uk-icon="instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="" uk-icon="facebook"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="" uk-icon="twitter"><i class="fa-brands fa-twitter"></i></a></li>
-                            </ul>
-                            <ul class="team">
-                                <li>Martin Hernandez</li>
-                                <li>Lucia Perez</li>
-                                <li>Gaston Sanchez</li>
-                            </ul>
-                        </footer>
 
     </body>
 

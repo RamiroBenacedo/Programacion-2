@@ -7,7 +7,7 @@ const posteosController = {
     },
 
     agregarPost: function(req, res, next){
-        res.render('agregarPost', title = 'Express');
+        res.render('agregarPost', {title : 'Express'});
     }
 }
 

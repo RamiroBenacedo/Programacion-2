@@ -6,7 +6,7 @@ const usersController = {
     },
 
     editarPerfil: function(req, res, next) {
-        res.render('editarPerfil', title = 'Express');
+        res.render('editarPerfil', {title : 'Express'});
     },
 
     detalleUsuario: function (req, res, next) {

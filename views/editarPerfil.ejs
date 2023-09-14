@@ -10,42 +10,33 @@
     <main>
         <section class="center main-content">
         <h1>Editar perfil</h1>
-        <form class="formuRegister" action="/users/editarPerfil/<%= usuario.id %>" method="POST">
-            <label class="label" for="usuario"> Usuario:</label>
-            <input  class="input" type="text" id="usuario" name="usuario" value="<%= usuario.usuario %>"  ><br>
-          
-            <label class="label"  for="Contraena">Contraseña:</label>
-            <input class="input"  type="password" id="contraseña" name="contrasennia" value=""><br>
-          
-            <label class="label"  for="Fecha de nacimiento">Fecha de Nacimiento:</label>
-            <input  class="input" type="date" id="fecha_nacimiento" name="fecha_nacimiento" value= "<%= usuario.fecha_nacimiento %>"><br>
-          
-            <label class="label"  for="Nro de documento">Nro de Documento:</label>
-            <input  class="input" type="text" id="nro_documento" name="nro_documento" value="<%= usuario.documento%>" ><br>
-          
-            <label class="label"  for="Foto de perfil">Foto de Perfil:</label>
-            <input  class="input" type="text" id="foto_perfil" name="foto_perfil"  value="<%= usuario.foto_perfil %>"><br>
+        <form action= "/login" method="GET">
+            <label  for="email"> Email:</label>
+            <input  type="email" id="email" name="email" value="" required>
 
-            <h2> <%= error %></h2>
+            <label  for="nombre"> Nombre:</label>
+            <input  type="text" id="nombre" name="nombre" value="" required>
+
+            <label  for="clave"> Clave:</label>
+            <input  type="password" id="clave" name="clave" value="" required>
+
+            <label for="dni">DNI:</label>
+            <input id="dni" type="number" name="dni" value="" required>
           
-            <input class="submit" type="submit" value="Actualizar información">
+            <label  for="fotoPerfil"> Foto de Perfil:</label>
+            <input  type="text" id="fotoPerfil" name="fotoPerfil" value="">
+          
+            <label for="fecha">Fecha de nacimiento:</label>
+            <input id="fecha" type="text" name="fecha" value="">
+          
+            <button type="submit">Enviar</button>
           </form>
 
         </section>
     </main>
 
-    <footer class="main-footer">
-        <ul class="social">
-            <li><a href="" uk-icon="instagram"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="" uk-icon="facebook"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="" uk-icon="twitter"><i class="fa-brands fa-twitter"></i></a></li>
-        </ul>
-        <ul class="team">
-            <li>Martin Hernandez</li>
-            <li>Lucia Perez</li>
-            <li>Gaston Sanchez</li>
-        </ul>
-    </footer>
+    <%- include('./partials/footer') %>
+
 
 </body>
 

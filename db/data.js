@@ -104,7 +104,7 @@ const data = {
         id: 1,
         clienteid: 1,
         nombreUsuario: 'Pablo',
-        fotoPerfil: '../',
+        fotoPerfil: '/img/pablo.jpg',
         nombreImg: "https://cdn.motor1.com/images/mgl/Akkwn2/s1/lanzamiento-mercedes-benz-clasec-1.jpg",
         textonombre: "mercedez benz",
         textoposteo: "color negro",
@@ -117,7 +117,7 @@ const data = {
             textoComentario: "Muy bueno" ,
         },
         {
-            id: 1,
+            id: 2,
             idPost: 1,
             idUsuario: 3,
             nombre: 'Martin',
@@ -125,7 +125,7 @@ const data = {
             textoComentario: "No me gusto" ,
         },
         {
-            id: 1,
+            id: 3,
             idPost: 1,
             idUsuario: 4,
             nombre: 'Paula',
@@ -133,7 +133,7 @@ const data = {
             textoComentario: "Esplendido" ,
         },
         {
-            id: 1,
+            id: 4,
             idPost: 1,
             idUsuario: 5,
             nombre: 'Franco',
@@ -521,3 +521,5 @@ const data = {
     ]
     },
     ]}
+
+    module.exports = data
