@@ -6,7 +6,7 @@ router.get('/miPerfil/id/:id?', usersController.miPerfil);
 
 router.get('/editarPerfil/id/:id', usersController.editarPerfil);
 
-router.get('/detalleUsuario/id/:id', usersController.detalleusuario);
+router.get('/detalleUsuario/id/:id', usersController.detalleUsuario);
 
 
 module.exports = router;

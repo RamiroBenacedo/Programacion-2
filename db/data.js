@@ -5,7 +5,7 @@ const data = {
             email: 'pablo@gmail.com',
             clave: 'pablo',
             nombreUsuario: 'Pablo',
-            fotoPerfil: '../public/img/pablo.jpg',
+            fotoPerfil: '/img/pablo.jpg',
             fecha: '15/12/1865',
             dni: '44986213'
         },
@@ -15,7 +15,7 @@ const data = {
             email: 'maria@gmail.com',
             clave: 'maria',
             nombreUsuario: 'Maria',
-            fotoPerfil: '../public/img/maria.jpg',
+            fotoPerfil: '/img/maria.jpg',
             fecha: '20/09/2002',
             dni: '42871032'
         },
@@ -113,7 +113,7 @@ const data = {
             idPost: 1,
             idUsuario: 2,
             nombre: 'Maria',
-            fotoPerfil: '../public/img/maria.jpg',
+            fotoPerfil: '/img/maria.jpg',
             textoComentario: "Muy bueno" ,
         },
         {
