@@ -108,7 +108,7 @@ const data = {
         nombreImg: "https://cdn.motor1.com/images/mgl/Akkwn2/s1/lanzamiento-mercedes-benz-clasec-1.jpg",
         textonombre: "mercedez benz",
         textoposteo: "color negro",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 1,
             idUsuario: 2,
@@ -150,7 +150,7 @@ const data = {
         nombreImg: "https://tourismmedia.italia.it/is/image/mitur/20210302144440-varenna-lago-di-como-lombardia-gettyimages-874859776-2",
         textonombre: "Lago di Como",
         textoposteo: "Me fui de vacaciones!",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 2,
             idUsuario: 10,
@@ -192,7 +192,7 @@ const data = {
         nombreImg: "https://media.npr.org/assets/img/2022/11/30/ap22334713805422-bf2e9ef9ad834246d7204a5e599e5835a9b70cf3-s1100-c50.jpg",
         textonombre: "Messi",
         textoposteo: "El mejor de la historia",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 3,
             idUsuario: 6,
@@ -234,7 +234,7 @@ const data = {
         nombreImg: "https://i.pinimg.com/originals/81/6d/95/816d95932601dc85e3cb8e35e9f62cb1.jpg",
         textonombre: "Asado",
         textoposteo: "Que rico asado voy a comer",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 4,
             idUsuario: 1,
@@ -276,7 +276,7 @@ const data = {
         nombreImg: "https://media.glamour.mx/photos/640258dd03837e4b8abcfa87/1:1/w_1999,h_1999,c_limit/Pareja%20enamorada.jpg",
         textonombre: "Pareja",
         textoposteo: "Mi pareja",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 5,
             idUsuario: 1,
@@ -318,7 +318,7 @@ const data = {
         nombreImg: "https://es.web.img3.acsta.net/medias/nmedia/18/72/41/74/20198901.jpg",
         textonombre: "Pelicula",
         textoposteo: "Que buena pelicula",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 6,
             idUsuario: 2,
@@ -360,7 +360,7 @@ const data = {
         nombreImg: "https://marketplace.canva.com/EAE77G_seFw/1/0/1067w/canva-tarjeta-para-receta-%C2%B7-hoja-de-recetario-espagueti-a-la-bolo%C3%B1esa-vintage-con-dibujos-JJowlmR8hzM.jpg",
         textonombre: "Receta",
         textoposteo: "Miren esta receta",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 7,
             idUsuario: 5,
@@ -402,7 +402,7 @@ const data = {
         nombreImg: "https://images.ecestaticos.com/sTRDdRvKDYME49pxYnrumQ1Upd8=/0x0:2272x1615/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F524%2F7d4%2Fa75%2F5247d4a75ad51daa279b66430b49d04b.jpg",
         textonombre: "Djokovic",
         textoposteo: "Mejor tenista del mundo",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 8,
             idUsuario: 1,
@@ -444,7 +444,7 @@ const data = {
         nombreImg: "https://www.el1digital.com.ar/wp-content/uploads/2023/09/milei-massa.jpg",
         textonombre: "MassaMilei",
         textoposteo: "Quien gana?",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 9,
             idUsuario: 1,
@@ -486,7 +486,7 @@ const data = {
         nombreImg: "https://storage.googleapis.com/diariodemocracia/cache/a9/20/98491.jpg",
         textonombre: "Paretto",
         textoposteo: "Foto mia paula paretto",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 10,
             idUsuario: 1,
