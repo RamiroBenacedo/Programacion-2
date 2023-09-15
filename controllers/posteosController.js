@@ -1,7 +1,7 @@
 const data = require("../db/data")
 
 const posteosController = {
-    detalleDelPost: function(req, res, next){
+    detallePost: function(req, res, next){
         let id = req.params.id;
         res.render('detallePost', {idPosteo: id, usuario: data.usuarios, posteo: data.posteos});
     },
