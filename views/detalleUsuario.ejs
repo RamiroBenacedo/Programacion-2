@@ -27,7 +27,7 @@
                     </section>
                     <section class="bottom">
                         <% for( let k=0; k< posteos.length; k++ ) { %>
-                            <% if (posteos[k].idUsuario==idUsuario) { %>
+                            <% if (posteos[k].clienteid==idUsuario) { %>
                                 <article class="post">
                                     <a href="/post/detallePost/id/<%= posteos[k].id %>">
                                         <img src="<%= posteos[k].nombreImg %>" alt="">
@@ -37,7 +37,7 @@
                                     <% } %>
                     </section>
                     <% } %>
-                        <% } %>
+                    <% } %>
         </div>
     </main>
 

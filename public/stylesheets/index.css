@@ -297,6 +297,7 @@ main {
 
 .perfil{
     width: 25%;
+    border-radius: 90%;
 }
 footer{
     color: black;
@@ -319,4 +320,10 @@ form{
 }
 .comments{
     color: white;
+}
+
+.center{
+    background-color: black;
+    border-radius: 10px;
+    height: 200px;
 }

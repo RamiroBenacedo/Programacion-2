@@ -14,12 +14,12 @@
                 <div class="info-usuario ">
                     <img class="perfil" src="<%= posteos[i].fotoPerfil %>" alt="">
                     <h4>
-                        <a href="/views/miPerfil/id/<%= posteos[i].clienteId %>">
+                        <a href="/users/detalleUsuario/id/<%= posteos[i].clienteid %>">
                             <%= posteos[i].nombreUsuario %></a>
                     </h4>
                 </div>
                 <div class="post-body">
-                    <a href="/detallePost/id/<%= posteos[i].id %>">
+                    <a href="/post/detalle/id/<%= posteos[i].id %>">
                         <img src="<%= posteos[i].nombreImg %>" alt=""></a>
                 </div>
                 <ul class="post-reacciones">
@@ -35,14 +35,14 @@
                         <%= posteos[i].nombreUsuario %>
                     </h3>
                     <p>
-                        <%= posteos[i].textoPost %>
+                        <%= posteos[i].textoposteo %>
                     </p>
 
                     <h4>Comentarios</h4>
                     <ul>
                         <% for( let k=0; k < 2; k++ ) { %>
                         <li><a
-                                href="/users/detalleUsuario/id/<%= posteos[i].comentarios[k].clienteid %>">
+                                href="/users/detalleUsuario/id/<%= posteos[i].comentarios[k].idUsuario %>">
                                 <%= posteos[i].comentarios[k].nombre%>
                             </a>
                             <span>
