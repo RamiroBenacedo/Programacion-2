@@ -9,27 +9,38 @@
 
     <main>
         <div class="user-detail container">
-            <section class="top main-content">
-                <img class="perfil" src="/img/pablo.jpg" alt="">
-                <div class="info-usuario">
-                    <p><%= usuario[0].nombreUsuario %></p> 
-                    <a class="follow" href="/users/editarPerfil/id/<%= usuario[0].id %>"><i class="fa-solid fa-user-gear"></i></a>
-                    <ul class="meta">
-                        <li>100 post</li>
-                        <li>200 seguidores</li>
-                        <li>300 seguidos</li>
-                    </ul>
-                </div>
-            </section>
-            <section class="bottom">
-                <% for( let i = 0; i < 3; i++ ) { %>
-                    <article class="post">
-                        <a href="/post/detallePost/id/<%= posteos[i].id %>">
-                            <img src="<%= posteos[i].nombreImg %>" alt="">
-                        </a>
-                    </article>
-                <% } %>
-            </section>
+            <% for( let i=0; i < usuario.length; i++ ) { %>
+                <% if (i+1==idUsuario) { %>
+                    <section class="top main-content">
+                        <img class="perfil" src="<%= usuario[i].fotoPerfil %>" alt="">
+                        <div class="info-usuario info-usuario-color">
+                            <p>
+                                <%= usuario[i].nombreUsuario %>
+                            </p>
+                            <a class="follow" href="/users/editarPerfil/id/<%= usuario[0].id %>"><i class="fa-solid fa-user-gear"></i></a>
+                            <ul class="meta">
+                                <li>100 post</li>
+                                <li>200 seguidores</li>
+                                <li>300 seguidos</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="bottom">
+                        <% for( let k=0; k< posteos.length; k++ ) { %>
+                            <% if (posteos[k].idUsuario==idUsuario) { %>
+                                <article class="post">
+                                    <a href="/post/detallePost/id/<%= posteos[k].id %>">
+                                        <img src="<%= posteos[k].nombreImg %>" alt="">
+                                    </a>
+                                </article>
+                                <% } %>
+                                    <% } %>
+                    </section>
+                    <% } %>
+                        <% } %>
+
+
+
         </div>
     </main>
 

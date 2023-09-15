@@ -9,22 +9,18 @@
 
     <main>
         <section class="center main-content">
-            <h1>Resultados de búsqueda.</h1>
             <% for( let i=0; i < posteos.length; i++ ) { %>
                 <article class="post">
                     <div class="info-usuario ">
-                        <img class="profile" src="<%= posteos[i].fotoPerfil %>"
-                            alt="<%= posteos[i].nombreUsuario %>">
+                        <img class="perfil" src="<%= posteos[i].fotoPerfil %>" alt="">
                         <h4>
-                            <a href="/usuarios/detalleUsuario/id/<%= posteos[i].idUsuario %>">
-                                <%= posteos[i].nombreUsuario %>
-                            </a>
+                            <a href="/users/detalleUsuario/id/<%= posteos[i].clienteId %>">
+                                <%= posteos[i].nombreUsuario %></a>
                         </h4>
                     </div>
                     <div class="post-body">
                         <a href="/posts/detalle/id/<%= posteos[i].id %>">
-                            <img src="<%= posteos[i].nombreImg %>" alt="">
-                        </a>
+                            <img src="<%= posteos[i].nombreImg %>" alt=""></a>
                     </div>
                     <ul class="post-reacciones">
                         <li>
@@ -35,24 +31,30 @@
                         </li>
                     </ul>
                     <div class="post-comentarios">
+                        <h3 class="texto-usuario">
+                            <%= posteos[i].nombreUsuario %>
+                        </h3>
+                        <p>
+                            <%= posteos[i].textoPost %>
+                        </p>
+    
                         <h4>Comentarios</h4>
                         <ul>
-                            <% for( let j=0; j < 2; j++ ) { %>
-                                <li><a
-                                        href="/usuarios/detalleUsuario/id/<%= posteos[i].comentarios[j].idUsuario %>">
-                                        <%= posteos[i].comentarios[j].nombre%>
-                                    </a>
-                                    <span>
-                                        <%= posteos[i].comentarios[j].textoComment %>
-                                    </span>
-                                </li>
-                                <% } %>
-                                    <a href="/posts/detalle/id/<%= posteos[i].id %>">Ver
-                                        más...</a>
+                            <% for( let k=0; k < 2; k++ ) { %>
+                            <li><a
+                                    href="/users/detalleUsuario/id/<%= posteos[i].comentarios[k].clienteId %>">
+                                    <%= posteos[i].comentarios[k].nombre%>
+                                </a>
+                                <span>
+                                    <%= posteos[i].comentarios[k].textoComentario %>
+                                </span>
+                            </li>
+                            <% } %>
+                                <a href="/post/detalle/id/<%= posteos[i].id %>">Ver más...</a>
                         </ul>
                     </div>
                 </article>
-                <% } %>
+            <% } %>
 
         </section>
     </main>
