@@ -111,6 +111,7 @@ main {
     flex-direction: row;
     justify-content:flex-start;
     align-items: center;
+    color: lightblue;
 }
 .info-usuario img {
     margin-right: 10px;
