@@ -294,3 +294,21 @@ main {
     justify-content: space-between;
     width: 100%;
 }
+
+.perfil{
+    width: 25%;
+}
+footer{
+    color: black;
+    background-color:white;
+}
+header{
+    color: black;
+    background-color: white;
+}
+body{
+    background-color: black;
+}
+.post{
+    background-color: white;
+}

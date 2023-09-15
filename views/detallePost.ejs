@@ -9,14 +9,14 @@
 
     <main>
         <div class="post-detail container">
-            <% for( let i=0; i < posteos.length; i++ ) { %>
-                <% if (i+1==idPost) { %>
+            <% for( let i=0; i < posteo.length; i++ ) { %>
+                <% if (i+1==idPosteo) { %>
             <section class="center main-content post">
                 <div class="info-usuario">
-                    <img class="perfil" src="<%= posteos[i].fotoPerfil %>">
-                    <p><a href="/users/detalleUsuario/id/<%= posteos[i].clienteid %>"><%= posteos[i].nombreUsuario %></a></p>
+                    <img class="perfil" src="<%= posteo[i].fotoPerfil %>">
+                    <p><a href="/users/detalleUsuario/id/<%= posteo[i].clienteid %>"><%= posteo[i].nombreUsuario %></a></p>
                 </div>
-                <img class="photo" src="<%= posteos[i].nombreImg %>" alt="">
+                <img class="photo" src="<%= posteo[i].nombreImg %>" alt="">
             </section>
             <section class="right">
                 <h4>Comentarios</h4>
@@ -26,12 +26,12 @@
                         <button type="submit">Comentar</button>
                     </form>
                     <div>
-                        <% for( let k=0; k < posteos[i].comentarios.length; k++ ) { %>
+                        <% for( let k=0; k < posteo[i].comentarios.length; k++ ) { %>
                             <article class="comment">
-                                <img class = "perfil" src="<%= posteos[i].comentarios[k].fotoPerfil %>" alt="<%= posteos[i].nombreUsuario %>">
+                                <img class = "perfil" src="<%= posteo[i].comentarios[k].fotoPerfil %>" alt="<%= posteo[i].nombreUsuario %>">
                                 <section class="content">
-                                    <a class="user" href="/users/detalleUsuario/id/<%= posteos[i].comentarios[k].clienteid %>"><%= posteos[i].comentarios[k].nombre%></a>
-                                    <span class="text"><%= posteos[i].comentarios[k].textoComentario %></span>
+                                    <a class="user" href="/users/detalleUsuario/id/<%= posteo[i].comentarios[k].clienteid %>"><%= posteo[i].comentarios[k].nombre%></a>
+                                    <span class="text"><%= posteo[i].comentarios[k].textoComentario %></span>
                                 </section>
                             </article>
                             <% } %>
