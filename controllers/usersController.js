@@ -2,6 +2,7 @@ const data = require("../db/data")
 
 const usersController = {
     miPerfil: function (req, res, next) {
+        let id = req.params.id
         res.render ('miPerfil', {idUsuario: id, usuario: data.usuarios, posteos: data.posteos});
     },
 
