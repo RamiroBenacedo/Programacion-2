@@ -15,7 +15,7 @@ const data = {
             email: 'maria@gmail.com',
             clave: 'maria',
             nombreUsuario: 'Maria',
-            fotoPerfil: 'Maria',
+            fotoPerfil: '/img/maria.jpg',
             fecha: '20/09/2002',
             dni: '42871032'
         },

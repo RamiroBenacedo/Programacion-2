@@ -14,7 +14,9 @@
                     <section class="top main-content">
                         <img class="perfil" src="<%= usuario[i].fotoPerfil %>" alt="">
                         <div class="info-usuario info-usuario-color">
-                            <p><%= usuario[i].nombreUsuario %></p>
+                            <p>
+                                <%= usuario[i].nombreUsuario %>
+                            </p>
                             <a class="follow" href="/users/editarPerfil/id/<%= usuario[0].idUsuario %>"><i class="fa-solid fa-user-gear"></i></a>
                             <ul class="meta">
                                 <li>100 post</li>
@@ -27,7 +29,7 @@
                         <% for( let k=0; k< posteos.length; k++ ) { %>
                             <% if (posteos[k].clienteid==idUsuario) { %>
                                 <article class="post">
-                                    <a href="/post/detallePost/id/<%= posteos[k].idUsuario %>">
+                                    <a href="/post/detallePost/id/<%= posteos[k].id %>">
                                         <img src="<%= posteos[k].nombreImg %>" alt="">
                                     </a>
                                 </article>
@@ -35,9 +37,7 @@
                                     <% } %>
                     </section>
                     <% } %>
-                        <% } %>
-
-
+                    <% } %>
 
         </div>
     </main>
@@ -47,3 +47,5 @@
 </body>
 
 </html>
+
+
