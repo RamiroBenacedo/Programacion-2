@@ -307,8 +307,16 @@ header{
     background-color: white;
 }
 body{
-    background-color: black;
+ background-image: url(https://i.pinimg.com/564x/62/66/f9/6266f9227fadf6d2142b0b0137b8beaa.jpg);
 }
 .post{
     background-color: white;
+}.post .info-usuario{
+ border-bottom: black;
+}
+form{
+    color: white;
+}
+.comments{
+    color: white;
 }

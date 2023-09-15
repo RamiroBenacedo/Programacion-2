@@ -108,7 +108,7 @@ const data = {
         nombreImg: "https://cdn.motor1.com/images/mgl/Akkwn2/s1/lanzamiento-mercedes-benz-clasec-1.jpg",
         textonombre: "mercedez benz",
         textoposteo: "color negro",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 1,
             idUsuario: 2,
@@ -147,10 +147,10 @@ const data = {
         clienteid: 2,
         nombreUsuario: 'Maria',
         fotoPerfil: '/img/maria.jpg',
-        nombreImg: "https://tourismmedia.italia.it/is/image/mitur/20210302144440-varenna-lago-di-como-lombardia-gettyimages-874859776-2",
+        nombreImg: "https://media.autoexpress.co.uk/image/private/s--5-xtWGFv--/f_auto,t_content-image-full-desktop@1/v1636372558/autoexpress/2021/11/Ferrari%20812%20Competizione%202021-2.jpg",
         textonombre: "Lago di Como",
-        textoposteo: "Me fui de vacaciones!",
-        textoComentarioarios: [{
+        textoposteo: "te paso a buscar en la amarilla?bbeta",
+        comentarios: [{
             id: 1,
             idPost: 2,
             idUsuario: 10,
@@ -189,10 +189,10 @@ const data = {
         clienteid: 7,
         nombreUsuario: 'Tomas',
         fotoPerfil: '/img/tomas.jpg',
-        nombreImg: "https://media.npr.org/assets/img/2022/11/30/ap22334713805422-bf2e9ef9ad834246d7204a5e599e5835a9b70cf3-s1100-c50.jpg",
+        nombreImg: 'https://www.km77.com/media/fotos/volkswagen_golf_2009_gti_3141_1.jpg',
         textonombre: "Messi",
-        textoposteo: "El mejor de la historia",
-        textoComentarioarios: [{
+        textoposteo: "Golf gti",
+        comentarios: [{
             id: 1,
             idPost: 3,
             idUsuario: 6,
@@ -231,10 +231,10 @@ const data = {
         clienteid: 3,
         nombreUsuario: 'Martin',
         fotoPerfil: '/img/martin.jpg',
-        nombreImg: "https://i.pinimg.com/originals/81/6d/95/816d95932601dc85e3cb8e35e9f62cb1.jpg",
+        nombreImg: "https://cdn.motor1.com/images/mgl/VRW87/s1/primicia-confirmada-vw-presento-la-amarok-v6.webp",
         textonombre: "Asado",
-        textoposteo: "Que rico asado voy a comer",
-        textoComentarioarios: [{
+        textoposteo: "Amarokr",
+        comentarios: [{
             id: 1,
             idPost: 4,
             idUsuario: 1,
@@ -273,10 +273,10 @@ const data = {
         clienteid: 6,
         nombreUsuario: 'Lola',
         fotoPerfil: '/img/lola.jpg',
-        nombreImg: "https://media.glamour.mx/photos/640258dd03837e4b8abcfa87/1:1/w_1999,h_1999,c_limit/Pareja%20enamorada.jpg",
+        nombreImg: "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2022/10/bmw-m2-coupe-2023-2839887.jpg?tf=2048x",
         textonombre: "Pareja",
         textoposteo: "Mi pareja",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 5,
             idUsuario: 1,
@@ -315,10 +315,10 @@ const data = {
         clienteid: 10,
         nombreUsuario: 'Emma',
         fotoPerfil: '/img/emma.jpg',
-        nombreImg: "https://es.web.img3.acsta.net/medias/nmedia/18/72/41/74/20198901.jpg",
-        textonombre: "Pelicula",
+        nombreImg: "https://cdn.motor1.com/images/mgl/2NO9Xp/s1/lamborghini-urus-by-mansory-and-mtm.webp",
+        textonombre: "lamborghini",
         textoposteo: "Que buena pelicula",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 6,
             idUsuario: 2,
@@ -357,10 +357,10 @@ const data = {
         clienteid: 8,
         nombreUsuario: 'Magui',
         fotoPerfil: '/img/magui.jpg',
-        nombreImg: "https://marketplace.canva.com/EAE77G_seFw/1/0/1067w/canva-tarjeta-para-receta-%C2%B7-hoja-de-recetario-espagueti-a-la-bolo%C3%B1esa-vintage-con-dibujos-JJowlmR8hzM.jpg",
+        nombreImg: "https://www.digitaltrends.com/wp-content/uploads/2019/01/lamborghini_huracan_evo_street_2.jpg?resize=625%2C417&p=1",
         textonombre: "Receta",
         textoposteo: "Miren esta receta",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 7,
             idUsuario: 5,
@@ -399,10 +399,10 @@ const data = {
         clienteid: 5,
         nombreUsuario: 'Franco',
         fotoPerfil: '/img/franco.jpg',
-        nombreImg: "https://images.ecestaticos.com/sTRDdRvKDYME49pxYnrumQ1Upd8=/0x0:2272x1615/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F524%2F7d4%2Fa75%2F5247d4a75ad51daa279b66430b49d04b.jpg",
-        textonombre: "Djokovic",
+        nombreImg: "https://images.dealer.com/autodata/us/640/color/2023/USD30MBS231A0/040.jpg",
+        textonombre: "mercho",
         textoposteo: "Mejor tenista del mundo",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 8,
             idUsuario: 1,
@@ -441,10 +441,10 @@ const data = {
         clienteid: 9,
         nombreUsuario: 'Raul',
         fotoPerfil: '/img/raul.jpg',
-        nombreImg: "https://www.el1digital.com.ar/wp-content/uploads/2023/09/milei-massa.jpg",
+        nombreImg: "https://autodinamico.mx/wp-content/uploads/2022/04/AMG-AD1-1920x1080.jpg",
         textonombre: "MassaMilei",
         textoposteo: "Quien gana?",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 9,
             idUsuario: 1,
@@ -483,10 +483,10 @@ const data = {
         clienteid: 4,
         nombreUsuario: 'Paula',
         fotoPerfil: '/img/paula.jpg',
-        nombreImg: "https://storage.googleapis.com/diariodemocracia/cache/a9/20/98491.jpg",
+        nombreImg: "https://gagadget.com/media/cache/df/34/df34d87e1d252e5c9d5a3694ceb0de68.jpg",
         textonombre: "Paretto",
         textoposteo: "Foto mia paula paretto",
-        textoComentarioarios: [{
+        comentarios: [{
             id: 1,
             idPost: 10,
             idUsuario: 1,
