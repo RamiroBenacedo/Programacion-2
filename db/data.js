@@ -25,7 +25,7 @@ const data = {
             email: 'martin@gmail.com',
             clave: 'martin',
             nombreUsuario: 'Martin',
-            fotoPerfil: '../public/img/martin.jpg',
+            fotoPerfil: '/img/martin.jpg',
             fecha: '16/07/1924',
             dni: '78951468'
         },
@@ -35,7 +35,7 @@ const data = {
             email: 'paula@gmail.com',
             clave: 'paula',
             nombreUsuario: 'Paula',
-            fotoPerfil: '../public/img/paula.jpg',
+            fotoPerfil: '/img/paula.jpg',
             fecha: '28/10/1970',
             dni: '45236987'
         },
@@ -45,7 +45,7 @@ const data = {
             email: 'franco@gmail.com',
             clave: 'franco',
             nombreUsuario: 'Franco',
-            fotoPerfil: '../public/img/franco.jpg',
+            fotoPerfil: '/img/franco.jpg',
             fecha: '03/03/2003',
             dni: '46257465'
         },
@@ -55,7 +55,7 @@ const data = {
             email: 'lola@gmail.com',
             clave: 'lola',
             nombreUsuario: 'Lola',
-            fotoPerfil: '../public/img/lola.jpg',
+            fotoPerfil: '/img/lola.jpg',
             fecha: '30/12/1999',
             dni: '40458965'
         },
@@ -65,7 +65,7 @@ const data = {
             email: 'tomas@gmail.com',
             clave: 'tomas',
             nombreUsuario: 'Tomas',
-            fotoPerfil: '../public/img/tomas.jpg',
+            fotoPerfil: '/img/tomas.jpg',
             fecha: '19/10/2005',
             dni: '48987201'
         },
@@ -75,7 +75,7 @@ const data = {
             email: 'magui@gmail.com',
             clave: 'magui',
             nombreUsuario: 'Magui',
-            fotoPerfil: '../public/img/magui.jpg',
+            fotoPerfil: '/img/magui.jpg',
             fecha: '20/12/1975',
             dni: '22659874'
         },
@@ -85,7 +85,7 @@ const data = {
             email: 'raul@gmail.com',
             clave: 'raul',
             nombreUsuario: 'Raul',
-            fotoPerfil: '../public/img/raul.jpg',
+            fotoPerfil: '/img/raul.jpg',
             fecha: '08/11/2001',
             dni: '43598712'
         },
@@ -95,7 +95,7 @@ const data = {
             email: 'emma@gmail.com',
             clave: 'emma',
             nombreUsuario: 'Emma',
-            fotoPerfil: '../public/img/emma.jpg',
+            fotoPerfil: '/img/emma.jpg',
             fecha: '18/08/1980',
             dni: '38965417'
         },
@@ -121,7 +121,7 @@ const data = {
             idPost: 1,
             idUsuario: 3,
             nombre: 'Martin',
-            fotoPerfil: '../public/img/martin.jpg',
+            fotoPerfil: '/img/martin.jpg',
             textoComentario: "No me gusto" ,
         },
         {
@@ -129,7 +129,7 @@ const data = {
             idPost: 1,
             idUsuario: 4,
             nombre: 'Paula',
-            fotoPerfil: '../public/img/paula.jpg',
+            fotoPerfil: '/img/paula.jpg',
             textoComentario: "Esplendido" ,
         },
         {
@@ -137,7 +137,7 @@ const data = {
             idPost: 1,
             idUsuario: 5,
             nombre: 'Franco',
-            fotoPerfil: '../public/img/franco.jpg',
+            fotoPerfil: '/img/franco.jpg',
             textoComentario: "Buenisimo" ,
         },
     ]
@@ -146,7 +146,7 @@ const data = {
         id: 2,
         clienteid: 2,
         nombreUsuario: 'Maria',
-        fotoPerfil: '../public/img/maria.jpg',
+        fotoPerfil: '/img/maria.jpg',
         nombreImg: "https://tourismmedia.italia.it/is/image/mitur/20210302144440-varenna-lago-di-como-lombardia-gettyimages-874859776-2",
         textonombre: "Lago di Como",
         textoposteo: "Me fui de vacaciones!",
@@ -155,7 +155,7 @@ const data = {
             idPost: 2,
             idUsuario: 10,
             nombre: 'Emma',
-            fotoPerfil: '../public/img/emma.jpg',
+            fotoPerfil: '/img/emma.jpg',
             textoComentario: "Que lindo lugar" ,
         },
         {
@@ -163,7 +163,7 @@ const data = {
             idPost: 2,
             idUsuario: 9,
             nombre: 'Raul',
-            fotoPerfil: '../public/img/raul.jpg',
+            fotoPerfil: '/img/raul.jpg',
             textoComentario: "Italia" ,
         },
         {
@@ -171,7 +171,7 @@ const data = {
             idPost: 2,
             idUsuario: 8,
             nombre: 'Magui',
-            fotoPerfil: '../public/img/magui.jpg',
+            fotoPerfil: '/img/magui.jpg',
             textoComentario: "Europa es god" ,
         },
         {
@@ -179,7 +179,7 @@ const data = {
             idPost: 2,
             idUsuario: 7,
             nombre: 'Tomas',
-            fotoPerfil: '../public/img/tomas.jpg',
+            fotoPerfil: '/img/tomas.jpg',
             textoComentario: "LLevame!" ,
         }
     ]
@@ -188,7 +188,7 @@ const data = {
         id: 3,
         clienteid: 7,
         nombreUsuario: 'Tomas',
-        fotoPerfil: '../public/img/tomas.jpg',
+        fotoPerfil: '/img/tomas.jpg',
         nombreImg: "https://media.npr.org/assets/img/2022/11/30/ap22334713805422-bf2e9ef9ad834246d7204a5e599e5835a9b70cf3-s1100-c50.jpg",
         textonombre: "Messi",
         textoposteo: "El mejor de la historia",
@@ -197,7 +197,7 @@ const data = {
             idPost: 3,
             idUsuario: 6,
             nombre: 'Lola',
-            fotoPerfil: '../public/img/lola.jpg',
+            fotoPerfil: '/img/lola.jpg',
             textoComentario: "Aguante messiii" ,
         },
         {
@@ -205,7 +205,7 @@ const data = {
             idPost: 3,
             idUsuario: 5,
             nombre: 'Franco',
-            fotoPerfil: '../public/img/franco.jpg',
+            fotoPerfil: '/img/franco.jpg',
             textoComentario: "vamooosss" ,
         },
         {
@@ -213,7 +213,7 @@ const data = {
             idPost: 3,
             idUsuario: 8,
             nombre: 'Magui',
-            fotoPerfil: '../public/img/magui.jpg',
+            fotoPerfil: '/img/magui.jpg',
             textoComentario: "goat " ,
         },
         {
@@ -221,7 +221,7 @@ const data = {
             idPost: 3,
             idUsuario: 4,
             nombre: 'Paula',
-            fotoPerfil: '../public/img/paula.jpg',
+            fotoPerfil: '/img/paula.jpg',
             textoComentario: "indiscutido!" ,
         }
     ]
@@ -230,7 +230,7 @@ const data = {
         id: 4,
         clienteid: 3,
         nombreUsuario: 'Martin',
-        fotoPerfil: '../public/img/martin.jpg',
+        fotoPerfil: '/img/martin.jpg',
         nombreImg: "https://i.pinimg.com/originals/81/6d/95/816d95932601dc85e3cb8e35e9f62cb1.jpg",
         textonombre: "Asado",
         textoposteo: "Que rico asado voy a comer",
@@ -239,7 +239,7 @@ const data = {
             idPost: 4,
             idUsuario: 1,
             nombre: 'Pablo',
-            fotoPerfil: '../public/img/pablo.jpg',
+            fotoPerfil: '/img/pablo.jpg',
             textoComentario: "Que rico" ,
         },
         {
@@ -247,7 +247,7 @@ const data = {
             idPost: 4,
             idUsuario: 9,
             nombre: 'Raul',
-            fotoPerfil: '../public/img/raul.jpg',
+            fotoPerfil: '/img/raul.jpg',
             textoComentario: "Prefiero el vacio!!" ,
         },
         {
@@ -255,7 +255,7 @@ const data = {
             idPost: 4,
             idUsuario: 7,
             nombre: 'Tomas',
-            fotoPerfil: '../public/img/tomas.jpg',
+            fotoPerfil: '/img/tomas.jpg',
             textoComentario: "Invitame mal amigo " ,
         },
         {
@@ -263,7 +263,7 @@ const data = {
             idPost: 4,
             idUsuario: 10,
             nombre: 'Emma',
-            fotoPerfil: '../public/img/emma.jpg',
+            fotoPerfil: '/img/emma.jpg',
             textoComentario: "El mejor corte lejos" ,
         }
     ]
@@ -272,7 +272,7 @@ const data = {
         id: 5,
         clienteid: 6,
         nombreUsuario: 'Lola',
-        fotoPerfil: '../public/img/lola.jpg',
+        fotoPerfil: '/img/lola.jpg',
         nombreImg: "https://media.glamour.mx/photos/640258dd03837e4b8abcfa87/1:1/w_1999,h_1999,c_limit/Pareja%20enamorada.jpg",
         textonombre: "Pareja",
         textoposteo: "Mi pareja",
@@ -281,7 +281,7 @@ const data = {
             idPost: 5,
             idUsuario: 1,
             nombre: 'Pablo',
-            fotoPerfil: '../public/img/pablo.jpg',
+            fotoPerfil: '/img/pablo.jpg',
             textoComentario: "Les mando un abrazo" ,
         },
         {
@@ -289,7 +289,7 @@ const data = {
             idPost: 5,
             idUsuario: 4,
             nombre: 'Paula',
-            fotoPerfil: '../public/img/paula.jpg',
+            fotoPerfil: '/img/paula.jpg',
             textoComentario: "A mi me dejaron" ,
         },
         {
@@ -297,7 +297,7 @@ const data = {
             idPost: 5,
             idUsuario: 5,
             nombre: 'Franco',
-            fotoPerfil: '../public/img/franco.jpg',
+            fotoPerfil: '/img/franco.jpg',
             textoComentario: "Paula yo te propongo matrimonio no hay drama" ,
         },
         {
@@ -305,7 +305,7 @@ const data = {
             idPost: 5,
             idUsuario: 2,
             nombre: 'Maria',
-            fotoPerfil: '../public/img/maria.jpg',
+            fotoPerfil: '/img/maria.jpg',
             textoComentario: "Que tiernos" ,
         }
     ]
@@ -314,7 +314,7 @@ const data = {
         id: 6,
         clienteid: 10,
         nombreUsuario: 'Emma',
-        fotoPerfil: '../public/img/emma.jpg',
+        fotoPerfil: '/img/emma.jpg',
         nombreImg: "https://es.web.img3.acsta.net/medias/nmedia/18/72/41/74/20198901.jpg",
         textonombre: "Pelicula",
         textoposteo: "Que buena pelicula",
@@ -323,7 +323,7 @@ const data = {
             idPost: 6,
             idUsuario: 2,
             nombre: 'Maria',
-            fotoPerfil: '../public/img/maria.jpg',
+            fotoPerfil: '/img/maria.jpg',
             textoComentario: "No la entiendo" ,
         },
         {
@@ -331,7 +331,7 @@ const data = {
             idPost: 6,
             idUsuario: 9,
             nombre: 'Raul',
-            fotoPerfil: '../public/img/raul.jpg',
+            fotoPerfil: '/img/raul.jpg',
             textoComentario: "Nolan crack" ,
         },
         {
@@ -339,7 +339,7 @@ const data = {
             idPost: 6,
             idUsuario: 3,
             nombre: 'Martin',
-            fotoPerfil: '../public/img/martin.jpg',
+            fotoPerfil: '/img/martin.jpg',
             textoComentario: "Tarantino es mejor" ,
         },
         {
@@ -347,7 +347,7 @@ const data = {
             idPost: 6,
             idUsuario: 7,
             nombre: 'Tomas',
-            fotoPerfil: '../public/img/tomas.jpg',
+            fotoPerfil: '/img/tomas.jpg',
             textoComentario: "Aburrida" ,
         }
     ]
@@ -356,7 +356,7 @@ const data = {
         id: 7,
         clienteid: 8,
         nombreUsuario: 'Magui',
-        fotoPerfil: '../public/img/magui.jpg',
+        fotoPerfil: '/img/magui.jpg',
         nombreImg: "https://marketplace.canva.com/EAE77G_seFw/1/0/1067w/canva-tarjeta-para-receta-%C2%B7-hoja-de-recetario-espagueti-a-la-bolo%C3%B1esa-vintage-con-dibujos-JJowlmR8hzM.jpg",
         textonombre: "Receta",
         textoposteo: "Miren esta receta",
@@ -365,7 +365,7 @@ const data = {
             idPost: 7,
             idUsuario: 5,
             nombre: 'Franco',
-            fotoPerfil: '../public/img/franco.jpg',
+            fotoPerfil: '/img/franco.jpg',
             textoComentario: "Prefiero el pesto" ,
         },
         {
@@ -373,7 +373,7 @@ const data = {
             idPost: 7,
             idUsuario: 3,
             nombre: 'Martin',
-            fotoPerfil: '../public/img/martin.jpg',
+            fotoPerfil: '/img/martin.jpg',
             textoComentario: "Cuando me cocinas?" ,
         },
         {
@@ -381,7 +381,7 @@ const data = {
             idPost: 7,
             idUsuario: 2,
             nombre: 'Maria',
-            fotoPerfil: '../public/img/maria.jpg',
+            fotoPerfil: '/img/maria.jpg',
             textoComentario: "Bolognesaaa" ,
         },
         {
@@ -389,7 +389,7 @@ const data = {
             idPost: 7,
             idUsuario: 6,
             nombre: 'Lola',
-            fotoPerfil: '../public/img/lola.jpg',
+            fotoPerfil: '/img/lola.jpg',
             textoComentario: "Fideo con salsa" ,
         }
     ]
@@ -398,7 +398,7 @@ const data = {
         id: 8,
         clienteid: 5,
         nombreUsuario: 'Franco',
-        fotoPerfil: '../public/img/franco.jpg',
+        fotoPerfil: '/img/franco.jpg',
         nombreImg: "https://images.ecestaticos.com/sTRDdRvKDYME49pxYnrumQ1Upd8=/0x0:2272x1615/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F524%2F7d4%2Fa75%2F5247d4a75ad51daa279b66430b49d04b.jpg",
         textonombre: "Djokovic",
         textoposteo: "Mejor tenista del mundo",
@@ -407,7 +407,7 @@ const data = {
             idPost: 8,
             idUsuario: 1,
             nombre: 'Pablo',
-            fotoPerfil: '../public/img/pablo.jpg',
+            fotoPerfil: '/img/pablo.jpg',
             textoComentario: "Asi es" ,
         },
         {
@@ -415,7 +415,7 @@ const data = {
             idPost: 8,
             idUsuario: 7,
             nombre: 'Tomas',
-            fotoPerfil: '../public/img/tomas.jpg',
+            fotoPerfil: '/img/tomas.jpg',
             textoComentario: "Sin dudas" ,
         },
         {
@@ -423,7 +423,7 @@ const data = {
             idPost: 8,
             idUsuario: 2,
             nombre: 'Maria',
-            fotoPerfil: '../public/img/maria.jpg',
+            fotoPerfil: '/img/maria.jpg',
             textoComentario: "Epico" ,
         },
         {
@@ -431,7 +431,7 @@ const data = {
             idPost: 8,
             idUsuario: 6,
             nombre: 'Lola',
-            fotoPerfil: '../public/img/lola.jpg',
+            fotoPerfil: '/img/lola.jpg',
             textoComentario: "Nadal es mejor" ,
         }
     ]
@@ -440,7 +440,7 @@ const data = {
         id: 9,
         clienteid: 9,
         nombreUsuario: 'Raul',
-        fotoPerfil: '../public/img/raul.jpg',
+        fotoPerfil: '/img/raul.jpg',
         nombreImg: "https://www.el1digital.com.ar/wp-content/uploads/2023/09/milei-massa.jpg",
         textonombre: "MassaMilei",
         textoposteo: "Quien gana?",
@@ -449,7 +449,7 @@ const data = {
             idPost: 9,
             idUsuario: 1,
             nombre: 'Pablo',
-            fotoPerfil: '../public/img/pablo.jpg',
+            fotoPerfil: '/img/pablo.jpg',
             textoComentario: "Massa" ,
         },
         {
@@ -457,7 +457,7 @@ const data = {
             idPost: 9,
             idUsuario: 7,
             nombre: 'Tomas',
-            fotoPerfil: '../public/img/tomas.jpg',
+            fotoPerfil: '/img/tomas.jpg',
             textoComentario: "Milei" ,
         },
         {
@@ -465,7 +465,7 @@ const data = {
             idPost: 9,
             idUsuario: 3,
             nombre: 'Martin',
-            fotoPerfil: '../public/img/martin.jpg',
+            fotoPerfil: '/img/martin.jpg',
             textoComentario: "Todos" ,
         },
         {
@@ -473,7 +473,7 @@ const data = {
             idPost: 9,
             idUsuario: 6,
             nombre: 'Lola',
-            fotoPerfil: '../public/img/lola.jpg',
+            fotoPerfil: '/img/lola.jpg',
             textoComentario: "Ninguno" ,
         }
     ]
@@ -482,7 +482,7 @@ const data = {
         id: 10,
         clienteid: 4,
         nombreUsuario: 'Paula',
-        fotoPerfil: '../public/img/paula.jpg',
+        fotoPerfil: '/img/paula.jpg',
         nombreImg: "https://storage.googleapis.com/diariodemocracia/cache/a9/20/98491.jpg",
         textonombre: "Paretto",
         textoposteo: "Foto mia paula paretto",
@@ -491,7 +491,7 @@ const data = {
             idPost: 10,
             idUsuario: 1,
             nombre: 'Pablo',
-            fotoPerfil: '../public/img/pablo.jpg',
+            fotoPerfil: '/img/pablo.jpg',
             textoComentario: "Que grande paula!" ,
         },
         {
@@ -499,7 +499,7 @@ const data = {
             idPost: 10,
             idUsuario: 7,
             nombre: 'Tomas',
-            fotoPerfil: '../public/img/tomas.jpg',
+            fotoPerfil: '/img/tomas.jpg',
             textoComentario: "Felicitaciones" ,
         },
         {
@@ -507,7 +507,7 @@ const data = {
             idPost: 10,
             idUsuario: 3,
             nombre: 'Martin',
-            fotoPerfil: '../public/img/martin.jpg',
+            fotoPerfil: '/img/martin.jpg',
             textoComentario: "Sos crack" ,
         },
         {
@@ -515,7 +515,7 @@ const data = {
             idPost: 10,
             idUsuario: 6,
             nombre: 'Lola',
-            fotoPerfil: '../public/img/lola.jpg',
+            fotoPerfil: '/img/lola.jpg',
             textoComentario: "Bien ahi" ,
         }
     ]

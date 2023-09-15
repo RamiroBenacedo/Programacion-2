@@ -2,7 +2,7 @@ const data = require("../db/data")
 
 const usersController = {
     miPerfil: function (req, res, next) {
-        res.render ('miPerfil', {lista: data.usuarios, posteos: data.posteos});
+        res.render ('miPerfil', {usuario: data.usuarios, posteos: data.posteos});
     },
 
     editarPerfil: function(req, res, next) {

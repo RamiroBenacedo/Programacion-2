@@ -9,31 +9,51 @@
 
     <main>
         <section class="center main-content">
-        <h1>Resultados de búsqueda.</h1>
-        <% if (productos.length !=0) { %>
-            <% for(let i = 0; i < productos.length; i++ ) { %>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <section class="product-box">
-                        <a href="/productos/detalleProducto/<%= productos[i].id %>">
-                            <figure class="product-box_image">
-                                <img class="foto-producto" src="<%=productos[i].imagen%>" alt="cafetera moulinex">
-                            </figure>
-                            <article class="product-box_data">
-                                <h2><%=productos[i].nombre_producto%></h2>
-                                <p><%=productos[i].descripcion_producto%></p>
-                                <a href="/users/profile/id/<%=productos[i].productoUsuarios.id %>"><p>Usuario: <%= productos[i].productoUsuarios.usuario %></p></a>
-
-                            </article>
+            <h1>Resultados de búsqueda.</h1>
+            <% for( let i=0; i < posteos.length; i++ ) { %>
+                <article class="post">
+                    <div class="info-usuario ">
+                        <img class="profile" src="<%= posteos[i].fotoPerfil %>"
+                            alt="<%= posteos[i].nombreUsuario %>">
+                        <h4>
+                            <a href="/usuarios/detalleUsuario/id/<%= posteos[i].idUsuario %>">
+                                <%= posteos[i].nombreUsuario %>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="post-body">
+                        <a href="/posts/detalle/id/<%= posteos[i].id %>">
+                            <img src="<%= posteos[i].nombreImg %>" alt="">
                         </a>
-                    </section>
-                </div>
-            <% } %>
-            
-             <% } else { %>
+                    </div>
+                    <ul class="post-reacciones">
+                        <li>
+                            <i class="fa-regular fa-heart"></i>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-comment"></i>
+                        </li>
+                    </ul>
+                    <div class="post-comentarios">
+                        <h4>Comentarios</h4>
+                        <ul>
+                            <% for( let j=0; j < 2; j++ ) { %>
+                                <li><a
+                                        href="/usuarios/detalleUsuario/id/<%= posteos[i].comentarios[j].idUsuario %>">
+                                        <%= posteos[i].comentarios[j].nombre%>
+                                    </a>
+                                    <span>
+                                        <%= posteos[i].comentarios[j].textoComment %>
+                                    </span>
+                                </li>
+                                <% } %>
+                                    <a href="/posts/detalle/id/<%= posteos[i].id %>">Ver
+                                        más...</a>
+                        </ul>
+                    </div>
+                </article>
+                <% } %>
 
-                <h2 class="products-title"> No hay resultados para tu búsqueda </h2>
-
-                    <% } %>
         </section>
     </main>
 
