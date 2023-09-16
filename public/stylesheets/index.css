@@ -113,6 +113,9 @@ main {
     align-items: center;
     color: lightblue;
 }
+.colornombre{
+    color: white;
+}
 .info-usuario img {
     margin-right: 10px;
     border-radius: 90%;
