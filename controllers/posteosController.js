@@ -2,7 +2,7 @@ const data = require("../db/data");
 const db = require("../database/models");
 const Posteo = db.Posteo;
 const op = db.Sequelize.Op;
-
+const Comentario = require("./database/models/comentario");
 const posteosController = {
     detallePost: function(req, res){
         let id = req.params.id;
@@ -45,79 +45,77 @@ const posteosController = {
             })
         
     },
-    agregarPost: function(req, res){
-        return res.render('agregarPost');
-    }
-    },
-    crearPost: function(req, res){
-        db.Posteo.create ({
-            usuario_id: req.session.usuarioLogueado.id,
-            imagen: req.body.imagen,
-            nombre_producto: req.body.nombreProducto,
-            descripcion_producto: req.body.descripcion,
-            fecha_carga: req.body.fecha
-        })
-        .then((data)=> {
-            return res.redirect('/')
-        })
-        .catch((error)=>{
-            res.send(error)
-        })
-        
-    },
-    crearComentario: function(req,res){
-        db.Comentario.create({
-            usuario_id: req.session.usuarioLogueado.id,
-            post_id: req.params.id,
-            comentario: req.body.comentario
-        })
-        .then((data)=> {
-            return res.redirect('/')
-        })
-        .catch((error)=>{
-            res.send(error)
-        })
-    },
-    editarProducto: function (req, res) {
-        db.Producto.update({
-            imagen: req.body.imagen,
-            nombre_producto: req.body.nombreProducto,
-            descripcion_producto: req.body.descripcion,
-            fecha_carga: req.body.fecha
-        }, {where: {id: req.params.id}}
-        
-        )  
-        .then((data)=> {
-            return res.redirect('/')
-        })
-        .catch((error) => {
-            res.send(error)
-        })
-    },
-    editarProductoGet: function(req, res){
-        let id= req.params.id
-        Producto.findByPk(id)
-
-            .then((data)=> {
-            //res.send(data)
-            return res.render("product-edit", {producto:data}) //le paso otros datos
-
-            }). catch((error)=> {
-            res.send(error)
+    agregarPost: function(req, res)
+        return res.render('agregarPost')
+        crearProducto: function(req, res){
+            db.Posteo.create ({
+                usuario_id: req.session.usuarioLogueado.id,
+                imagen: req.body.imagen,
+                nombre_producto: req.body.nombreProducto,
+                descripcion_producto: req.body.descripcion,
+                fecha_carga: req.body.fecha
             })
-                  
-    },
-    eliminarProducto: function(req,res) {
-        let id= req.params.id
-        Producto.destroy({where: {id: id}})
-        .then((data) => {
-            return res.redirect('/')
-        })
-        .catch((error)=> {
-            res.send(error)
-        })
+            .then((data)=> {
+                return res.redirect('/')
+            })
+            .catch((error)=>{
+                res.send(error)
+            })
+            
+        },
+        crearComentario: function(req,res){
+            db.Comentario.create({
+                usuario_id: req.session.usuarioLogueado.id,
+                post_id: req.params.id,
+                comentario: req.body.comentario
+            })
+            .then((data)=> {
+                return res.redirect('/')
+            })
+            .catch((error)=>{
+                res.send(error)
+            })
+        },
+        editarProducto: function (req, res) {
+            db.Producto.update({
+                imagen: req.body.imagen,
+                nombre_producto: req.body.nombreProducto,
+                descripcion_producto: req.body.descripcion,
+                fecha_carga: req.body.fecha
+            }, {where: {id: req.params.id}}
+            
+            )  
+            .then((data)=> {
+                return res.redirect('/')
+            })
+            .catch((error) => {
+                res.send(error)
+            })
+        },
+        editarPosteoGet: function(req, res){
+            let id= req.params.id
+            Posteo.findByPk(id)
+    
+                .then((data)=> {
+                //res.send(data)
+                return res.render("editarPerfil", {Posteo:data}) //le paso otros datos
+    
+                }). catch((error)=> {
+                res.send(error)
+                })
+                      
+        },
+        eliminarPosteo: function(req,res) {
+            let id= req.params.id
+            Posteo.destroy({where: {id: id}})
+            .then((data) => {
+                return res.redirect('/')
+            })
+            .catch((error)=> {
+                res.send(error)
+            })
+        }
+    
     }
-
-}
 
 module.exports = posteosController
