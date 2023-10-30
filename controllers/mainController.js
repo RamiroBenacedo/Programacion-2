@@ -4,10 +4,16 @@ const db = require("../database/models");
 const mainController = {
   index: function (req, res, next) {
     db.Usuario.findAll({
-      include: [{association: "po"}]
+      include: [{association: "usuarioPosteo"}],
+      order: [['createdAt', 'DESC']]
     })
-    let id = req.params.id
-    res.render('index', {usuario: data.usuarios, idUsuario: id, posteos: data.posteos });
+    .then((datos) => {
+      let id = req.params.id
+      res.render('index', {usuario: data.usuarios, idUsuario: id, posteos: data.posteos })
+    });
+    .catch((error) =>{
+      return res.send(error);
+    })
   },
 
   login: function (req, res, next) {
