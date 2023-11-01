@@ -1,6 +1,6 @@
 const data = require("../db/data");
-const db = require("../database/models");
-const Posteo = db.Posteo;
+const db = require("./database/models");
+const Posteo = db.Posteos;
 const op = db.Sequelize.Op;
 const Comentario = require("./database/models/comentario");
 const posteosController = {
@@ -45,15 +45,13 @@ const posteosController = {
             })
         
     },
-    agregarPost: function(req, res)
-        return res.render('agregarPost')
+    agregarPost: function(req, res){
+        return res.render('agregarPost')},
         crearProducto: function(req, res){
             db.Posteo.create ({
-                usuario_id: req.session.usuarioLogueado.id,
-                imagen: req.body.imagen,
-                nombre_producto: req.body.nombreProducto,
-                descripcion_producto: req.body.descripcion,
-                fecha_carga: req.body.fecha
+                clienteid: req.session.usuarioLogueado.id,
+                campoTextoNombreImg: req.body.imagen,
+                campoTextoPiePost: req.body.nombreProducto,
             })
             .then((data)=> {
                 return res.redirect('/')
@@ -65,9 +63,9 @@ const posteosController = {
         },
         crearComentario: function(req,res){
             db.Comentario.create({
-                usuario_id: req.session.usuarioLogueado.id,
-                post_id: req.params.id,
-                comentario: req.body.comentario
+                idusuario  : req.session.usuarioLogueado.id,
+                Idpost: req.params.id,
+                campoTextoNombreImg	: req.body.comentario
             })
             .then((data)=> {
                 return res.redirect('/')
@@ -76,12 +74,10 @@ const posteosController = {
                 res.send(error)
             })
         },
-        editarProducto: function (req, res) {
-            db.Producto.update({
-                imagen: req.body.imagen,
-                nombre_producto: req.body.nombreProducto,
-                descripcion_producto: req.body.descripcion,
-                fecha_carga: req.body.fecha
+        editarPosteo: function (req, res) {
+            db.Posteo.update({
+                campoTextoNombreImg: req.body.nombreProducto,
+                campoTextoPiePost: req.body.descripcion,
             }, {where: {id: req.params.id}}
             
             )  

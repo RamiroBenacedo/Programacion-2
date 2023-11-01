@@ -1,5 +1,5 @@
 const data = require("../db/data")
-
+const db = require("./database/models");
 const usersController = {
     miPerfil: function (req, res, next) {
         let id = req.params.id
