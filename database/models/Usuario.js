@@ -6,26 +6,27 @@ module.exports = function(sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER
         },
+        cotrasena: {
+            type: dataTypes.STRING
+        },
         email: {
             type: dataTypes.STRING,
             unique: true
         },
-        nombreUsuario: {
+        nombre: {
             type: dataTypes.STRING,
             unique: true
         },
-        clave: {
+        foto_de_perfil: {
             type: dataTypes.STRING
         },
-        fecha: {
+        fecha_nacimiento: {
             type: dataTypes.DATE
         },
         dni: {
             type: dataTypes.INTEGER
         },
-        fotoPerfil: {
-            type: dataTypes.STRING
-        },
+        
         createdAt: {
             type: dataTypes.DATE,
             AllowNull: true
@@ -41,7 +42,7 @@ module.exports = function(sequelize, dataTypes){
      }
 
      let config = {
-        tableName:"usuario", timestamps: true, underscore: true
+        tableName:"Usuario", timestamps: true, underscore: true
      }
 
      let Usuario = sequelize.define(alias, cols, config);

@@ -14,15 +14,9 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER,
             unique: true
         },
-        nombre: {
+        campoTextoNombreImg: {
             type: dataTypes.STRING,
             unique: true
-        },
-        fotoPerfil: {
-            type: dataTypes.STRING
-        },
-        textoComentario: {
-            type: dataTypes.STRING
         },
         createdAt: {
             type: dataTypes.DATE,
