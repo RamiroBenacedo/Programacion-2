@@ -36,13 +36,13 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.DATE,
             AllowNull: true
         }}
-     }
+     
 
      let config = {
         tableName:"tabladecomentario", timestamps: true, underscore: true
      }
 
-     let Comentario = sequalize.define(alias, cols, config);
+     let Comentario = sequelize.define(alias, cols, config);
       //relaciones
     // muchos comentarios pertenecen a un posteo 
     Comentario.associate= function(models){
@@ -58,3 +58,4 @@ module.exports = function(sequelize, dataTypes){
          })
         }
      return Comentario;
+    }

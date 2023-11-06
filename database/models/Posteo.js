@@ -38,13 +38,13 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.DATE,
             AllowNull: true
         }}
-     }
+     
 
      let config = {
         tableName:"posteosUsuario", timestamps: true, underscore: true
      }
 
-     let Posteo = sequalize.define(alias, cols, config);
+     let Posteo = sequelize.define(alias, cols, config);
      //relaciones
     // Un posteo pertenece a un usuario 
     Posteo.associate= function(models){
@@ -60,3 +60,4 @@ module.exports = function(sequelize, dataTypes){
          })
         }
      return Posteo;
+    }

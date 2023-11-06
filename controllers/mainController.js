@@ -1,6 +1,5 @@
 const data = require("../db/data");
-const db = require("./database/models");
-
+const db= require("../database/models")
 const mainController = {
   index: function (req, res, next) {
     db.Usuario.findAll({

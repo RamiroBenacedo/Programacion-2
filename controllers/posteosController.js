@@ -1,8 +1,7 @@
-const data = require("../db/data");
-const db = require("./database/models");
+
+const db=require("../database/models")
 const Posteo = db.Posteos;
 const op = db.Sequelize.Op;
-const Comentario = require("./database/models/comentario");
 const posteosController = {
     detallePost: function(req, res){
         let id = req.params.id;

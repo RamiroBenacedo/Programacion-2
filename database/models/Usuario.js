@@ -44,7 +44,7 @@ module.exports = function(sequelize, dataTypes){
         tableName:"usuario", timestamps: true, underscore: true
      }
 
-     let Usuario = sequalize.define(alias, cols, config);
+     let Usuario = sequelize.define(alias, cols, config);
       //relaciones
     // Un usuario tiene muchos posteos 
     Usuario.associate= function(models){
