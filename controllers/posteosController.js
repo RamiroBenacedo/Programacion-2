@@ -46,7 +46,7 @@ const posteosController = {
     },
     agregarPost: function(req, res){
         return res.render('agregarPost')},
-        crearProducto: function(req, res){
+        crearPost: function(req, res){
             db.Posteo.create ({
                 clienteid: req.session.usuarioLogueado.id,
                 campoTextoNombreImg: req.body.imagen,
@@ -63,7 +63,7 @@ const posteosController = {
         crearComentario: function(req,res){
             db.Comentario.create({
                 idusuario  : req.session.usuarioLogueado.id,
-                Idpost: req.params.id,
+                idPost: req.params.id,
                 campoTextoNombreImg	: req.body.comentario
             })
             .then((data)=> {

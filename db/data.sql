@@ -30,7 +30,7 @@ textoposteo             VARCHAR(200)	NOT NULL,
 createdAt               TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP,
 updatedAt               TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deletedAt               TIMESTAMP 		NULL,
-FOREIGN KEY (clienteId) REFERENCES usuario (idUsuario)
+FOREIGN KEY (clienteId) REFERENCES usuario (id)
 );
 
 
@@ -43,24 +43,24 @@ campoTextoNombreImg		VARCHAR(200)	    NOT NULL,
 createdAt               TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
 updatedAt               TIMESTAMP 		    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deletedAt               TIMESTAMP 		    NULL,
-FOREIGN KEY (idpost) REFERENCES posteos(id),
+FOREIGN KEY (Idpost) REFERENCES posteosUsuario(id),
 FOREIGN KEY (idusuario)REFERENCES usuario(id));
 
 
-insert into usuario(id, contrasena, email, nombre, foto_de_perfil, fecha_nacimiento, dni,createdAt,updatedAt,deledAt)Values
-	(1, 'contrasena1', 'pablo@gmail.com', 'Pablo', '/img/pablo.jpg', '1865-12-15', '44986213'),
-	(2, 'contrasena2', 'maria@gmail.com', 'Maria', '', '2002-09-20', '42871032'),
-	(3, 'contrasena3', 'martin@gmail.com', 'Martin', '../public/img/martin.jpg', '1924-07-16', '78951468'),
-	(4, 'contrasena4', 'paula@gmail.com', 'Paula', '../public/img/paula.jpg', '1970-10-28', '45236987'),
-	(5, 'contrasena5', 'franco@gmail.com', 'Franco', '../public/img/franco.jpg', '2003-03-03', '46257465'),
-	(6, 'contrasena6', 'lola@gmail.com', 'Lola', '../public/img/lola.jpg', '1999-12-30', '40458965'),
-	(7, 'contrasena7', 'tomas@gmail.com', 'Tomas', '../public/img/tomas.jpg', '2005-10-19', '48987201'),
-	(8, 'contrasena8', 'magui@gmail.com', 'Magui', '../public/img/magui.jpg', '1975-12-20', '22659874'),
-	(9, 'contrasena9', 'raul@gmail.com', 'Raul', '../public/img/raul.jpg', '2001-11-08', '43598712'),
-	(10, 'contrasena10', 'emma@gmail.com', 'Emma', '../public/img/emma.jpg', '1980-08-18', '38965417');
+insert into usuario(id, contrasena, email, nombre, foto_de_perfil, fecha_nacimiento, dni,createdAt,updatedAt,deletedAt)Values
+	(1, 'contrasena1', 'pablo@gmail.com', 'Pablo', '/img/pablo.jpg', '1865-12-15', '44986213', DEFAULT, DEFAULT, DEFAULT),
+	(2, 'contrasena2', 'maria@gmail.com', 'Maria', '', '2002-09-20', '42871032', DEFAULT, DEFAULT, DEFAULT),
+	(3, 'contrasena3', 'martin@gmail.com', 'Martin', '../public/img/martin.jpg', '1924-07-16', '78951468', DEFAULT, DEFAULT, DEFAULT),
+	(4, 'contrasena4', 'paula@gmail.com', 'Paula', '../public/img/paula.jpg', '1970-10-28', '45236987', DEFAULT, DEFAULT, DEFAULT),
+	(5, 'contrasena5', 'franco@gmail.com', 'Franco', '../public/img/franco.jpg', '2003-03-03', '46257465', DEFAULT, DEFAULT, DEFAULT),
+	(6, 'contrasena6', 'lola@gmail.com', 'Lola', '../public/img/lola.jpg', '1999-12-30', '40458965', DEFAULT, DEFAULT, DEFAULT),
+	(7, 'contrasena7', 'tomas@gmail.com', 'Tomas', '../public/img/tomas.jpg', '2005-10-19', '48987201', DEFAULT, DEFAULT, DEFAULT),
+	(8, 'contrasena8', 'magui@gmail.com', 'Magui', '../public/img/magui.jpg', '1975-12-20', '22659874', DEFAULT, DEFAULT, DEFAULT),
+	(9, 'contrasena9', 'raul@gmail.com', 'Raul', '../public/img/raul.jpg', '2001-11-08', '43598712', DEFAULT, DEFAULT, DEFAULT),
+	(10, 'contrasena10', 'emma@gmail.com', 'Emma', '../public/img/emma.jpg', '1980-08-18', '38965417', DEFAULT, DEFAULT, DEFAULT);
 
 
-insert into posteosUsuario(id, clienteId, nombreUsuario, fotoPerfil, nombreImg, textonombre, textoposteo, createdAt, updatedAt, deledAt) values
+insert into posteosUsuario(id, clienteId, nombreUsuario, fotoPerfil, nombreImg, textonombre, textoposteo, createdAt, updatedAt, deletedAt) values
 (1, 1, 'Pablo', '/img/pablo.jpg', "https://cdn.motor1.com/images/mgl/Akkwn2/s1/lanzamiento-mercedes-benz-clasec-1.jpg", "mercedez benz", "color negro", DEFAULT, DEFAULT, NULL),
 (2, 2, 'Maria', '/img/maria.jpg', 'https://media.autoexpress.co.uk/image/private/s--5-xtWGFv--/f_auto,t_content-image-full-desktop@1/v1636372558/autoexpress/2021/11/Ferrari%20812%20Competizione%202021-2.jpg', 'Lago di Como', 'te paso a buscar en la amarilla?bbeta', DEFAULT, DEFAULT, NULL),
 (3, 7, 'Tomas', '/img/tomas.jpg', 'https://www.km77.com/media/fotos/volkswagen_golf_2009_gti_3141_1.jpg', 'Messi', 'Golf gti', DEFAULT, DEFAULT, NULL),
@@ -70,7 +70,7 @@ insert into posteosUsuario(id, clienteId, nombreUsuario, fotoPerfil, nombreImg, 
 (7, 8, 'Magui', '/img/magui.jpg', 'https://www.digitaltrends.com/wp-content/uploads/2019/01/lamborghini_huracan_evo_street_2.jpg?resize=625%2C417&p=1', 'Receta', 'Miren esta receta', DEFAULT, DEFAULT, NULL),
 (8, 5, 'Franco', '/img/franco.jpg', 'https://images.dealer.com/autodata/us/640/color/2023/USD30MBS231A0/040.jpg', 'mercho', 'Mejor tenista del mundo', DEFAULT, DEFAULT, NULL),
 (9, 9, 'Raul', '/img/raul.jpg', 'https://autodinamico.mx/wp-content/uploads/2022/04/AMG-AD1-1920x1080.jpg', 'MassaMilei', 'Quien gana?', DEFAULT, DEFAULT, NULL),
-(10, 4, 'Paula', '/img/paula.jpg', 'https://gagadget.com/media/cache/df/34/df34d87e1d252e5c9d5a3694ceb0de68.jpg', 'Paretto', 'Foto mia paula paretto', DEFAULT, DEFAULT, NULL)
+(10, 4, 'Paula', '/img/paula.jpg', 'https://gagadget.com/media/cache/df/34/df34d87e1d252e5c9d5a3694ceb0de68.jpg', 'Paretto', 'Foto mia paula paretto', DEFAULT, DEFAULT, NULL);
 
 
 
@@ -117,5 +117,3 @@ insert into tablaDeComentario (id, idPost, idUsuario, campoTextoNombreImg , crea
 (38, 10, 7,'Felicitaciones!', default, default, default),
 (39, 10, 3,'Sos crack!', default, default, default),
 (40, 10, 6,'Bien ahi!', default, default, default);
-
-
