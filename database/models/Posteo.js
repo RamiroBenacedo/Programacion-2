@@ -55,7 +55,7 @@ module.exports = function(sequelize, dataTypes){
     //Un posteo tiene muchos comentarios
     Posteo.hasMany(models.Comentario, {
         as: "posteoComentarios",
-        foreignKey: "idusuario",
+        foreignKey: "idUsuario",
 
          })
         }

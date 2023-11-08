@@ -6,7 +6,7 @@ module.exports = function(sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        cotrasena: {
+        contrasena: {
             type: dataTypes.STRING
         },
         email: {
@@ -51,7 +51,7 @@ module.exports = function(sequelize, dataTypes){
     Usuario.associate= function(models){
         Usuario.hasMany(models.Posteo, {
             as: "usuarioPosteo", 
-            foreignKey: "idusuario",
+            foreignKey: "clienteId",
         }),
     //Un posteo tiene muchos comentarios
     Usuario.hasMany(models.Comentario, {
