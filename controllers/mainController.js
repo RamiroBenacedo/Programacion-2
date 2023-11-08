@@ -1,32 +1,38 @@
-const data = require("../db/data");
+const datos = require("../db/data");
 const db= require("../database/models")
 const mainController = {
   index: function (req, res, next) {
     db.Usuario.findAll({
-      include: [{association: "usuarioPosteo"}],
+      include: [{association: "posteoUsuarios"}],
       order: [['createdAt', 'DESC']]
     })
-    .then((datos) => {
-      let id = req.params.id
-      res.render('index', {usuario: data.usuarios, idUsuario: id, posteos: data.posteos })
+    .then((data) => {
+      res.render('index', {posteos: data})
     })
     .catch((error) =>{
       return res.send(error);
     })
   },
 
-  login: function (req, res, next) {
-    res.render('login', { title: 'Express' });
+  /* login: function (req, res) {
+    if(req.session.Usuario!= undefined){
+      return res.redirect("/")
+    }
+    else{
+      return res.render('login', {mensaje: ""})
+    }
+  }, */
+
+  registro: function (req, res) {
+    let error = ""
+    res.render("registro", {error:error})
   },
 
-  registro: function (req, res, next) {
-    res.render('registracion', { title: 'Express' });
-  },
-
-  resultadoBusqueda: function (req, res, next) {
-    let id = req.params.id
-    res.render('index', { usuario: data.usuarios, idUsuario: id, posteos: data.posteos });
-  }
+  /* logout: function (req, res) {
+    req.session.destroy()
+    res.clearCookie("cookieUsuario")
+    return res.redirect("/")
+  } */
 };
 
 module.exports = mainController;

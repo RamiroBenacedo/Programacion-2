@@ -16,7 +16,7 @@ const posteosController = {
         console.log(id);
         console.log(data);
         //res.send(data)
-        res.render('detallePost', {idPosteo: id, usuario: data.usuarios, posteo: data.posteos});
+        return res.render('detallePost', {posteos: data});
         })
 
         .catch((error)=> {
@@ -24,7 +24,7 @@ const posteosController = {
         })
     },
 
-    searchResult: function(req,res){ 
+    resultadoBusqueda: function(req,res){ 
         let busqueda= req.query.search
              db.Posteo.findAll({ 
                 include: [{association: "posteoUsuarios"}], 
