@@ -2,15 +2,16 @@ const datos = require("../db/data");
 const db= require("../database/models")
 const mainController = {
   index: function (req, res, next) {
-    db.Usuario.findAll({
+    db.Posteo.findAll({
       include: [{association: "posteoUsuarios"}],
-      order: [['createdAt', 'DESC']]
+      //order: [['createdAt', 'DESC']]
     })
     .then((data) => {
+      return res.send(data)
       res.render('index', {posteos: data})
     })
     .catch((error) =>{
-      return res.send(error);
+      return res.send({data:error});
     })
   },
 
