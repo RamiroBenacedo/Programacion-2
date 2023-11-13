@@ -3,8 +3,11 @@ const db= require("../database/models")
 const mainController = {
   index: function (req, res, next) {
     db.Posteo.findAll({
-      include: [{association: "posteoUsuarios"}],
-      include: [{association: "posteoComentarios"}]
+      include: [{association: "posteoUsuarios"},
+                {association: "posteoComentarios",
+                    include: [{association: "comentarioUsuario"}]
+              }
+    ],
       //order: [['createdAt', 'DESC']]
     })
     .then((data) => {
