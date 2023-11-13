@@ -4,6 +4,7 @@ const mainController = {
   index: function (req, res, next) {
     db.Posteo.findAll({
       include: [{association: "posteoUsuarios"}],
+      include: [{association: "posteoComentarios"}]
       //order: [['createdAt', 'DESC']]
     })
     .then((data) => {
