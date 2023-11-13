@@ -8,32 +8,26 @@ module.exports = function(sequelize, dataTypes){
         },
         idPost: {
             type: dataTypes.INTEGER,
-            unique: true
         },
         idUsuario: {
             type: dataTypes.INTEGER,
-            unique: true
         },
         campoTextoNombreImg: {
             type: dataTypes.STRING,
-            unique: true
         },
         createdAt: {
             type: dataTypes.DATE,
-            AllowNull: true
         },
         updatedAt: {
             type: dataTypes.DATE,
-            AllowNull: true
         },
         deletedAt: {
             type: dataTypes.DATE,
-            AllowNull: true
         }}
      
 
      let config = {
-        tableName:"tabladecomentario", timestamps: true, underscore: true
+        tableName:"tabladecomentario", timestamps: true, underscore: false
      }
 
      let Comentario = sequelize.define(alias, cols, config);
@@ -42,12 +36,12 @@ module.exports = function(sequelize, dataTypes){
     Comentario.associate= function(models){
         Comentario.belongsTo(models.Posteo, {
             as: "comentarioPosteo", 
-            foreignKey: "clienteId",
+            foreignKey: "idPost",
         }),
     //muchos comentarios pertenecen a un usuario
     Comentario.belongsTo(models.Usuario, {
         as: "comentarioUsuario",
-        foreignKey: "idusuario",
+        foreignKey: "idUsuario",
         onDelete: "cascade"
          })
         }

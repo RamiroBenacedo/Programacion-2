@@ -1,4 +1,4 @@
-module.exports = function(sequelize, dataTypes){
+module.exports = function (sequelize, dataTypes) {
     let alias = "Posteo";
     let cols = {
         id: {
@@ -37,27 +37,28 @@ module.exports = function(sequelize, dataTypes){
         deletedAt: {
             type: dataTypes.DATE,
             AllowNull: true
-        }}
-     
+        }
+    }
 
-     let config = {
-        tableName:"posteosUsuario", timestamps: true, underscore: true
-     }
 
-     let Posteo = sequelize.define(alias, cols, config);
-     //relaciones
+    let config = {
+        tableName: "posteosUsuario", timestamps: true, underscore: true
+    }
+
+    let Posteo = sequelize.define(alias, cols, config);
+    //relaciones
     // Un posteo pertenece a un usuario 
-    Posteo.associate= function(models){
+    Posteo.associate = function (models) {
         Posteo.belongsTo(models.Usuario, {
-            as: "posteoUsuarios", 
+            as: "posteoUsuarios",
             foreignKey: "clienteId",
         }),
-    //Un posteo tiene muchos comentarios
-    Posteo.hasMany(models.Comentario, {
-        as: "posteoComentarios",
-        foreignKey: "idUsuario",
+            //Un posteo tiene muchos comentarios
+            Posteo.hasMany(models.Comentario, {
+                as: "posteoComentarios",
+                foreignKey: "idPost",
 
-         })
-        }
-     return Posteo;
+            })
     }
+    return Posteo;
+}

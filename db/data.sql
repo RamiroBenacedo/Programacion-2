@@ -37,14 +37,14 @@ FOREIGN KEY (clienteId) REFERENCES usuario (id)
 CREATE TABLE tabladecomentario (
 /* nombreDeColumna  tipoDeDato  restricciones */
 id       		        INT         	    UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-Idpost				    INT                 UNSIGNED,
-idusuario               INT                 UNSIGNED,
+idPost				    INT                 UNSIGNED,
+idUsuario               INT                 UNSIGNED,
 campoTextoNombreImg		VARCHAR(200)	    NOT NULL,
 createdAt               TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
 updatedAt               TIMESTAMP 		    DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deletedAt               TIMESTAMP 		    NULL,
-FOREIGN KEY (Idpost) REFERENCES posteosUsuario(id),
-FOREIGN KEY (idusuario)REFERENCES usuario(id));
+FOREIGN KEY (idPost) REFERENCES posteosUsuario(id),
+FOREIGN KEY (idUsuario)REFERENCES usuario(id));
 
 
 insert into usuario(id, contrasena, email, nombre, foto_de_perfil, fecha_nacimiento, dni,createdAt,updatedAt,deletedAt)Values
