@@ -45,7 +45,7 @@ module.exports = function(sequelize, dataTypes){
             foreignKey: "clienteId",
         }),
     //muchos comentarios pertenecen a un usuario
-    Comentario.hasMany(models.Comentario, {
+    Comentario.belongsTo(models.Usuario, {
         as: "comentarioUsuario",
         foreignKey: "idusuario",
         onDelete: "cascade"
