@@ -29,15 +29,12 @@ module.exports = function(sequelize, dataTypes){
         
         createdAt: {
             type: dataTypes.DATE,
-            AllowNull: true
         },
         updatedAt: {
             type: dataTypes.DATE,
-            AllowNull: true
         },
         deletedAt: {
             type: dataTypes.DATE,
-            AllowNull: true
         }
      }
 

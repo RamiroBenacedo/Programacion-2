@@ -42,15 +42,15 @@
                     <ul>
                         <% for( let k=0; k < 2; k++ ) { %>
                         <li><a
-                                href="/users/detalleUsuario/id/<%= posteos[i].comentarios[k].idUsuario %>">
-                                <%= posteos[i].comentarios[k].nombre%>
+                                href="/users/detalleUsuario/id/<%= posteos[i].posteoComentarios[k].idUsuario %>">
+                                <%= posteos[i].posteoComentarios[k].nombreUsuarioComentario%>
                             </a>
                             <span>
-                                <%= posteos[i].comentarios[k].textoComentario %>
+                                <%= posteos[i].posteoComentarios[k].campoTextoNombreImg %>
                             </span>
                         </li>
                         <% } %>
-                            <a href="/post/detalle/id/<%= posteos[i].clienteid %>">Ver más...</a>
+                            <a href="/post/detalle/id/<%= posteos[i].clienteId %>">Ver más...</a>
                     </ul>
                 </div>
             </article>
