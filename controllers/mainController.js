@@ -11,8 +11,8 @@ const mainController = {
       order: [['createdAt', 'DESC']]
     })
     .then((data) => {
+      res.send(data)
        res.render('index', {posteos: data})
-       return res.send(data)
     })
     .catch((error) =>{
       return res.send({data:error});
