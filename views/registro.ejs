@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+
+<body>
+    <%- include('./partials/header') %>
+    <main>
+        <section class="center main-content">
+        <h1>Registrate</h1>
+        <form action= "/registro" method="POST">
+            <% if (locals.errors) { %>
+                <p class="mensaje-error"><%= locals.errors.message %></p>
+              <% } %>
+            <label  for="email"> Email:</label>
+            <input  type="email" class="input" id="email" name="email" value="" required><br>
+
+            <label  for="nombre"> Nombre:</label>
+            <input  type="text" class="input" id="nombre" name="nombre" value="" required><br>
+
+            <label  for="clave"> Clave:</label>
+            <input  type="password" class="input" id="clave" name="clave" value="" required><br>
+          
+            <label for="fecha">Fecha de nacimiento:</label>
+            <input id="fecha" class="input" type="text" name="fecha" value=""><br>
+          
+            <button type="text" class="submit">Crear</button>
+          </form>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+
+</body>
+
+</html>
+     

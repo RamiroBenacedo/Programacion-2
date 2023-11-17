@@ -5,8 +5,9 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', mainController.index);
 
-/* router.get('/login', mainController.login);
- */
+router.get('/login', mainController.login);
+router.get('/login', mainController.loginPost);
+
 router.get('/registracion', mainController.registro);
 router.post('/registracion', mainController.registro); /* cambiar el maincontroller. */
 
