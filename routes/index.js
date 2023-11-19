@@ -7,8 +7,9 @@ router.get('/', mainController.index);
 
 router.get('/login', mainController.login);
 router.get('/login', mainController.loginPost);
+router.get('/logout', mainController.logout);
 
-router.get('/registracion', mainController.registro);
-router.post('/registracion', mainController.registro); /* cambiar el maincontroller. */
+router.get('/registro', mainController.registro);
+router.post('/registro', mainController.store); /* cambiar el maincontroller. */
 
 module.exports = router;
