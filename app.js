@@ -25,12 +25,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret:"MyApp",resave:false,saveUninitialized:true}));
 
 app.use(function (req,res,next) {
-  if (req.session.usuarios != undefined) {
-    res.locals.usuarios=req.session.usuarios;
+  if (req.session.user != undefined) {
+    res.locals.user = req.session.user;
     return next();
   }
   return next();
 })
+
+
+app.use(function (req,res,next) {
+  if (req.cookies.userId != undefined && req.session.user == undefined) {
+    let idUsuarioCookie = req.cookies.userId;
+    db.Usuario.findByPk(idUsuarioCookie)
+    .then (function (user) {
+      req.session.user = user.dataValues;
+      res.locals.user = user.dataValues;
+      return next();
+    })
+    .catch(function(error) {
+      return res.send (error);
+    })
+  } else {
+    return next();
+  }
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

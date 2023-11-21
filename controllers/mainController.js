@@ -32,7 +32,7 @@ const mainController = {
     
     let errors = {}
     if (emailBuscado == ''){
-      errores.message("El email esta vacio")
+      errors.message("El email esta vacio")
       res.locals.errors = errors;
       return res.render('login')
     }
@@ -43,7 +43,7 @@ const mainController = {
     } else {
         let criterio = {
         where: [{email: emailBuscado}]
-    }};
+    };
 
 
     db.Usuario.findOne(criterio)
@@ -52,9 +52,11 @@ const mainController = {
         let check = bcrypt.compareSync(clave, result.clave)
               
       if (check) {
-        req.session.usuario=result.dataValues;
-        if (rememberMe!=undefined) {
-        res.cookie('userId', result.id,{maxAge:1000 * 60 * 5}) /* No entiendo de donde sale userId (esto lo hizo brian) */
+        req.session.user = result.dataValues;
+        /* res.send(req.session.usuario) */
+
+        if (rememberMe != undefined) {
+        res.cookie('userId', result.id, {maxAge:1000 * 60 * 5}) 
         }
         return res.redirect("/")}
         else {
@@ -69,12 +71,12 @@ const mainController = {
           
       }).catch((error) => {
           return res.send(error);
-      })},
+      })}},
   
 
   logout: function (req, res) {
     req.session.destroy()
-    res.clearCookie("cookieUsuario")
+    res.clearCookie("userId")
     return res.redirect("/")
     },
 
@@ -86,7 +88,7 @@ const mainController = {
 
   store: function(req, res){
     let info = req.body;
-/*     res.send(info)*/
+     /*res.send(info)*/
      let errors = {}
     if (info.email == ""){
       errors.message = 'El email esta vacio'
@@ -118,16 +120,28 @@ const mainController = {
     res.locals.errors = errors;
     res.render('registro')
 }
+else if (info.fotoPerfil == ""){
+  errors.message = 'Debes poner la URL de tu foto de perfil'
+  res.locals.errors = errors;
+  res.render('registro')
+}
+else if (info.dni == ""){
+  errors.message = 'Debes poner tu DNI'
+  res.locals.errors = errors;
+  res.render('registro')
+}
   else{
     let usuario = {
-      nombre: info.nombre,
       contrasena: bcrypt.hashSync(info.clave, 10),
       email: info.email,
+      nombre: info.nombre,
+      foto_de_perfil: info.fotoPerfil,
       fecha_nacimiento: info.fecha,
+      dni: info.dni,
       remember_token: "false"
     }
     db.Usuario.create(usuario)
-    .then((data) => {
+    .then((result) => {
       res.redirect('/login')
    })
     .catch((error)=> {

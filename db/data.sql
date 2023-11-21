@@ -48,17 +48,17 @@ FOREIGN KEY (idPost) REFERENCES posteosUsuario(id),
 FOREIGN KEY (idUsuario)REFERENCES usuario(id));
 
 
-insert into usuario(id, contrasena, email, nombre, foto_de_perfil, fecha_nacimiento, dni,createdAt,updatedAt,deletedAt)Values
-	(1, 'contrasena1', 'pablo@gmail.com', 'Pablo', '/img/pablo.jpg', '1865-12-15', '44986213', DEFAULT, DEFAULT, DEFAULT),
-	(2, 'contrasena2', 'maria@gmail.com', 'Maria', '', '2002-09-20', '42871032', DEFAULT, DEFAULT, DEFAULT),
-	(3, 'contrasena3', 'martin@gmail.com', 'Martin', '../public/img/martin.jpg', '1924-07-16', '78951468', DEFAULT, DEFAULT, DEFAULT),
-	(4, 'contrasena4', 'paula@gmail.com', 'Paula', '../public/img/paula.jpg', '1970-10-28', '45236987', DEFAULT, DEFAULT, DEFAULT),
-	(5, 'contrasena5', 'franco@gmail.com', 'Franco', '../public/img/franco.jpg', '2003-03-03', '46257465', DEFAULT, DEFAULT, DEFAULT),
-	(6, 'contrasena6', 'lola@gmail.com', 'Lola', '../public/img/lola.jpg', '1999-12-30', '40458965', DEFAULT, DEFAULT, DEFAULT),
-	(7, 'contrasena7', 'tomas@gmail.com', 'Tomas', '../public/img/tomas.jpg', '2005-10-19', '48987201', DEFAULT, DEFAULT, DEFAULT),
-	(8, 'contrasena8', 'magui@gmail.com', 'Magui', '../public/img/magui.jpg', '1975-12-20', '22659874', DEFAULT, DEFAULT, DEFAULT),
-	(9, 'contrasena9', 'raul@gmail.com', 'Raul', '../public/img/raul.jpg', '2001-11-08', '43598712', DEFAULT, DEFAULT, DEFAULT),
-	(10, 'contrasena10', 'emma@gmail.com', 'Emma', '../public/img/emma.jpg', '1980-08-18', '38965417', DEFAULT, DEFAULT, DEFAULT);
+insert into usuario(id, contrasena, email, nombre, foto_de_perfil, fecha_nacimiento, dni, createdAt, updatedAt, deletedAt)Values
+	(DEFAULT, 'contrasena1', 'pablo@gmail.com', 'Pablo', '/img/pablo.jpg', '1865-12-15', '44986213', DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'contrasena2', 'maria@gmail.com', 'Maria', '/img/maria.jpg', '2002-09-20', '42871032', DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'contrasena3', 'martin@gmail.com', 'Martin', '/img/martin.jpg', '1924-07-16', '78951468', DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'contrasena4', 'paula@gmail.com', 'Paula', '/img/paula.jpg', '1970-10-28', '45236987', DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'contrasena5', 'franco@gmail.com', 'Franco', '/img/franco.jpg', '2003-03-03', '46257465', DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'contrasena6', 'lola@gmail.com', 'Lola', '/img/lola.jpg', '1999-12-30', '40458965', DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'contrasena7', 'tomas@gmail.com', 'Tomas', '/img/tomas.jpg', '2005-10-19', '48987201', DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'contrasena8', 'magui@gmail.com', 'Magui', '/img/magui.jpg', '1975-12-20', '22659874', DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'contrasena9', 'raul@gmail.com', 'Raul', '/img/raul.jpg', '2001-11-08', '43598712', DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'contrasena10', 'emma@gmail.com', 'Emma', '/img/emma.jpg', '1980-08-18', '38965417', DEFAULT, DEFAULT, DEFAULT);
 
 
 insert into posteosUsuario(id, clienteId, nombreUsuario, fotoPerfil, nombreImg, textonombre, textoposteo, createdAt, updatedAt, deletedAt) values
