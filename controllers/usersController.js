@@ -1,6 +1,6 @@
 const db= require("../database/models")
-let posteos=data.Posteo;
-let usuarios=data.Usuario;
+let posteos=db.Posteo;
+let usuarios=db.Usuario;
 const usersController = {
     miPerfil: function (req, res) {
         if (res.locals.user !=undefined){
