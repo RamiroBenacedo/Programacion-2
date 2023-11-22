@@ -53,7 +53,7 @@ const mainController = {
               
       if (check) {
         req.session.user = result.dataValues;
-        /* res.send(req.session.usuario) */
+        /* res.send(req.session.user) */
 
         if (rememberMe != undefined) {
         res.cookie('userId', result.id, {maxAge:1000 * 60 * 5}) 
@@ -88,7 +88,7 @@ const mainController = {
 
   store: function(req, res){
     let info = req.body;
-     /*res.send(info)*/
+     /* res.send(info) */
      let errors = {}
     if (info.email == ""){
       errors.message = 'El email esta vacio'
@@ -142,7 +142,7 @@ else if (info.dni == ""){
     }
     db.Usuario.create(usuario)
     .then((result) => {
-      res.redirect('/login')
+      res.redirect('/')
    })
     .catch((error)=> {
       errors.message = "Hubo un error";

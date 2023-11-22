@@ -12,7 +12,7 @@ CREATE TABLE usuario (
 	fecha_nacimiento             INT         NOT NULL,
 	dni                  int(11) NOT NULL,
 	createdAt                    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updatedAt                    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updatedAt                    TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	deletedAt                    TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
     );
 
