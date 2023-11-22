@@ -27,7 +27,7 @@ const mainController = {
 
   loginPost: (req, res) => {
     let emailBuscado = req.body.email;
-    let contrasena = req.body.clave;   
+    let contrasena = req.body.contrasena;   
     let rememberMe=req.body.rememberMe;      
     
     let errors = {}
@@ -49,7 +49,7 @@ const mainController = {
     db.Usuario.findOne(criterio)
     .then((result) => {
       if (result != null) {
-        let check = bcrypt.compareSync(clave, result.clave)
+        let check = bcrypt.compareSync(contrasena, result.contrasena)
               
       if (check) {
         req.session.user = result.dataValues;
@@ -95,12 +95,12 @@ const mainController = {
       res.locals.errors = errors;
       res.render('registro')
     } 
-    else if (info.clave == ""){
+    else if (info.contrasena == ""){
       errors.message = 'La contrasena esta vacia'
       res.locals.errors = errors;
       res.render('registro')
     }
-    else if (info.clave.length < 3){
+    else if (info.contrasena.length < 3){
         errors.message = 'La contrasena debe tener mas de 3 caracteres'
         res.locals.errors = errors;
         res.render('registro')
@@ -115,12 +115,12 @@ const mainController = {
       res.locals.errors = errors;
       res.render('registro')
   }
-  else if (info.fecha == ""){
+  else if (info.fecha_nacimiento == ""){
     errors.message = 'Debes poner tu fecha de nacimiento'
     res.locals.errors = errors;
     res.render('registro')
 }
-else if (info.fotoPerfil == ""){
+else if (info.foto_de_perfil == ""){
   errors.message = 'Debes poner la URL de tu foto de perfil'
   res.locals.errors = errors;
   res.render('registro')
@@ -132,23 +132,24 @@ else if (info.dni == ""){
 }
   else{
     let usuario = {
-      contrasena: bcrypt.hashSync(info.clave, 10),
+      contrasena: bcrypt.hashSync(info.contrasena, 10),
       email: info.email,
       nombre: info.nombre,
-      foto_de_perfil: info.fotoPerfil,
-      fecha_nacimiento: info.fecha,
+      foto_de_perfil: info.foto_de_perfil,
+      fecha_nacimiento: info.fecha_nacimiento,
       dni: info.dni,
       remember_token: "false"
     }
     db.Usuario.create(usuario)
     .then((result) => {
-      res.redirect('/')
+      return res.redirect('/login')
    })
     .catch((error)=> {
-      errors.message = "Hubo un error";
+      let errors = {};
+      console.log(error);
+      errors.message = "El campo email esta repetido";
       res.locals.errors = errors;
-      console.log(error)
-      return res.redirect("/registro")
+      return res.redirect("registro")
     });
   }
   },
