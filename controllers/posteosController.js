@@ -100,17 +100,25 @@ const posteosController = {
                 })
                       
         },
+        subirposteo: function(req,res){
+            if(res.locals.user !=undefined){
+                return res.render("agregrpost");}
+                else{return res.redirect('/login');
+            }
+        },
+
+
         eliminarPosteo: function(req,res) {
-            let id= req.params.id
+            let id= Number(req.params.id);
             Posteo.destroy({where: {id: id}})
-            .then((data) => {
+            .then(function(data)  {
                 return res.redirect('/')
             })
-            .catch((error)=> {
+            .catch(function(error) {
                 res.send(error)
             })
         }
     
-    }
+    };
 
 module.exports = posteosController
