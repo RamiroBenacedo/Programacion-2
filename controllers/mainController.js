@@ -55,7 +55,7 @@ const mainController = {
         req.session.user = result.dataValues;
         /* res.send(req.session.user) */
 
-        if (rememberMe != undefined) {
+        if (rememberMe) {
         res.cookie('userId', result.id, {maxAge:1000 * 60 * 5}) 
         }
         return res.redirect("/")}
@@ -130,8 +130,17 @@ else if (info.dni == ""){
   res.locals.errors = errors;
   res.render('registro')
 }
-  else{
-    let usuario = {
+else{ 
+  db.Usuario.findOne({where:[{email: info.email}]})
+  .then(function (result) {
+    console.log(result);
+    if (result != undefined) {
+      errors.message = "El email ingresado ya esta registrado";
+      res.locals.errors = errors;
+      return res.render("registro");
+    }
+    else{
+      let usuario = {
       contrasena: bcrypt.hashSync(info.contrasena, 10),
       email: info.email,
       nombre: info.nombre,
@@ -152,8 +161,6 @@ else if (info.dni == ""){
       return res.redirect("registro")
     });
   }
-  },
-        
-};
-
+  })
+  }}};
 module.exports = mainController;
