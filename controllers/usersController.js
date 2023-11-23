@@ -5,7 +5,7 @@ const usersController = {
     miPerfil: function (req, res) {
         if (res.locals.user !=undefined){
             let id=req.params.id;
-        }
+            /*return res.send(req.params/id)*/
         let orden={
             order:[['createdAt', 'DESC']],
             where:[{clienteId:id}],
@@ -14,15 +14,17 @@ const usersController = {
                 nested:true
             }
         }
-        posteos.findAll(orden)
+        posteos.findAll(criterio)
         .then(function(result){
-            return res.render('miPerfil', { idUsuario: id, posteos: result});
+            // res.send(res.locals.user)
+            // res.send(result)
+            return res.render('miPerfil', { clienteId: id, posteos: result});
         })
         .catch(function (error) {
             return res.send(error)
-        })
-        },
-
+        })}else{
+            res.redirect('/login');
+        }},
 
     editarPerfil: function(req, res) {
         res.render('editarPerfil');
@@ -38,7 +40,7 @@ const usersController = {
         };
         usuarios.findByPk(id, union)
         .then(function(result){
-            return res.render('detalleUsuario',{ idUsuario: id, usuario: result, posteo: result.usuarioPosteo });
+            return res.render('detalleUsuario',{ clienteId: id, Usuario: result, posteosUsuario: result.usuarioPosteo });
         })
         .catch(function(error){
             return res.send(error)

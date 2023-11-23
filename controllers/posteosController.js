@@ -2,6 +2,7 @@
 const db=require("../database/models")
 const Posteo = db.Posteos;
 const op = db.Sequelize.Op;
+const comentarios=db.comentario;
 const posteosController = {
     detallePost: function(req, res){
         let id = req.params.id;
@@ -23,6 +24,12 @@ const posteosController = {
         res.render()
         })
     },
+    cartelagregarpost: function(req,res){
+        if (res.locals.user !=undefined){
+            return res.render('agregarpost');
+        }else{
+            return res.redirect('/login');}
+        },
 
     resultadoBusqueda: function(req,res){ 
         let busqueda= req.query.search

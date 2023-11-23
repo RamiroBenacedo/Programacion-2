@@ -8,37 +8,41 @@
     <%- include('./partials/header') %>
 
     <main>
-        <div class="user-detail container">
-            <% for( let i=0; i < usuario.length; i++ ) { %>
-                <% if (i+1==idUsuario) { %>
-                    <section class="top main-content">
-                        <img class="perfil" src="<%= usuario[i].fotoPerfil %>" alt="">
-                        <div class="info-usuario info-usuario-color">
-                            <p>
-                                <%= usuario[i].nombreUsuario %>
-                            </p>
-                            <a class="follow" href="">Seguir</a>
-                            <ul class="meta">
-                                <li>100 post</li>
-                                <li>200 seguidores</li>
-                                <li>300 seguidos</li>
-                            </ul>
+         <% if (locals.user !=undefined) { %>
+            <%- include('./partials/headerLog') %>
+            <% } else { %>
+                <%- include('./partials/header') %>
+            <% } %>
+            <main>
+                <% if (clienteId<0) { %>
+                    <h2 class="sin-resultados">No hay resultados para ese id. Por favor eliia otro</h2>
+                    <% } else {%>
+                        <div class="user-detail container">
+                            <section class="top main-content">
+                                <img class="post" src="<%= Usuario.foto_de_perfil %>" alt="Foto de perfil">
+                                <div class="info-usuario info-usuario-color">
+                                    <p>
+                                        <%= Usuario.nombre %>
+                                    </p>
+                                    <a class="follow" href="">seguir</a>
+                                    <ul class="meta">
+                                        <li><%= posteosUsuario.length %> posteos</li>
+                                        <li>200 seguidores</li>
+                                        <li>300 seguidos</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="bottom">
+                                <% for( let i=0; i < posteosUsuario.length; i++ ) { %>
+                                        <article class="post">
+                                            <a href="/posts/detalle/id/<%= posteosUsuario[i].id %>">
+                                                <img src="<%= posteosUsuario[i].nombreImg %>" alt="Posteo">
+                                            </a>
+                                        </article>
+                                            <% } %>
+                            </section>
                         </div>
-                    </section>
-                    <section class="bottom">
-                        <% for( let k=0; k< posteos.length; k++ ) { %>
-                            <% if (posteos[k].clienteid==idUsuario) { %>
-                                <article class="post">
-                                    <a href="/post/detalle/id/<%= posteos[k].id %>">
-                                        <img src="<%= posteos[k].nombreImg %>" alt="">
-                                    </a>
-                                </article>
-                                <% } %>
-                                    <% } %>
-                    </section>
-                    <% } %>
-                    <% } %>
-        </div>
+                        <% } %>
     </main>
 
     <%- include('./partials/footer') %>
