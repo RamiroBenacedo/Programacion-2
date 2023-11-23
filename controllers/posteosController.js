@@ -109,7 +109,7 @@ const posteosController = {
         },
         subirposteo: function(req,res){
             if(res.locals.user !=undefined){
-                return res.render("agregrpost");}
+                return res.render("agregarPost");}
                 else{return res.redirect('/login');
             }
         },
