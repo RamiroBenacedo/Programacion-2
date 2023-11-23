@@ -28,11 +28,12 @@ const mainController = {
   loginPost: (req, res) => {
     let emailBuscado = req.body.email;
     let contrasena = req.body.contrasena;   
-    let rememberMe=req.body.rememberMe;      
+/*     res.send(contrasena)
+ */    let rememberMe=req.body.rememberMe;      
     
     let errors = {}
     if (emailBuscado == ''){
-      errors.message("El email esta vacio")
+      errors.message ="El email esta vacio"
       res.locals.errors = errors;
       return res.render('login')
     }
@@ -49,12 +50,13 @@ const mainController = {
     db.Usuario.findOne(criterio)
     .then((result) => {
       if (result != null) {
-        let check = bcrypt.compareSync(contrasena, result.contrasena)
-              
+      let check = bcrypt.compareSync(contrasena, result.contrasena)
+/*    res.send(check)
+ */              
       if (check) {
         req.session.user = result.dataValues;
-        /* res.send(req.session.user) */
-
+/*          console.log(req.session.user)
+ */ 
         if (rememberMe) {
         res.cookie('userId', result.id, {maxAge:1000 * 60 * 5}) 
         }
@@ -65,7 +67,8 @@ const mainController = {
           return res.render("login")
         }} 
         else {
-          errors.message = "No existe el mail " + emailBuscado
+          errors.message = "No existe el mail " + emailBuscado;
+          res.locals.errors = errors
           res.render('login')
           }
           
@@ -162,5 +165,29 @@ else{
     });
   }
   })
-  }}};
+  }},
+  busqueda: function (req, res) {
+    let busqueda = req.query.busqueda;
+    let filtro = {
+      limit: 10,
+      order: [['createdAt', 'DESC']],
+      where: [
+        { textoPost: { [db.Sequelize.Op.like]: `%${busqueda}%` } }
+      ],
+      include: {
+        all: true,
+        nested: true
+      }
+    }
+    posts.findAll(filtro)
+      .then(function (results) {
+        //res.send(results)
+        return res.render("resultadoBusqueda", { posts: results, criterio: busqueda })
+      })
+      .catch(function (error) {
+        res.send(error)
+      })
+  },
+
+};
 module.exports = mainController;
