@@ -46,13 +46,16 @@ const mainController = {
         where: [{email: emailBuscado}]
     };
 
+    let contrasenaHasheada = bcrypt.hashSync(req.body.contrasena, 10);
 
     db.Usuario.findOne(criterio)
     .then((result) => {
       if (result != null) {
-      let check = bcrypt.compareSync(contrasena, result.contrasena)
-/*     res.send(check)
- */               
+        console.log(result.contrasena);
+      console.log(contrasenaHasheada);
+      let check = bcrypt.compareSync(contrasenaHasheada, result.contrasena)
+/*      res.send(check)
+ */                
       if (check) {
         req.session.user = result.dataValues;
         
@@ -171,16 +174,15 @@ else{
       limit: 10,
       order: [['createdAt', 'DESC']],
       where: [
-        { textoPost: { [db.Sequelize.Op.like]: `%${busqueda}%` } }
+        { textoposteo: { [db.Sequelize.Op.like]: `%${busqueda}%` } }
       ],
       include: {
         all: true,
         nested: true
       }
     }
-    posts.findAll(filtro)
+    db.Posteo.findAll(filtro)
       .then(function (results) {
-        //res.send(results)
         return res.render("resultadoBusqueda", { posts: results, criterio: busqueda })
       })
       .catch(function (error) {
