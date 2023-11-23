@@ -51,16 +51,15 @@ const mainController = {
     .then((result) => {
       if (result != null) {
       let check = bcrypt.compareSync(contrasena, result.contrasena)
-/*    res.send(check)
- */              
+/*     res.send(check)
+ */               
       if (check) {
         req.session.user = result.dataValues;
-/*          console.log(req.session.user)
- */ 
+        
         if (rememberMe) {
         res.cookie('userId', result.id, {maxAge:1000 * 60 * 5}) 
         }
-        return res.redirect("/")}
+        return res.redirect("/post/agregarPost")}
         else {
           errors.message = "La contraseña es incorrecta";
           res.locals.errors = errors;
