@@ -89,7 +89,7 @@ const posteosController = {
             })
             .catch(function (error) {
                 res.send(error)
-                res.redirect('/posts/detalle/id/'+ id)
+                res.redirect('/post/detalle/id/'+ id)
             })
         },
         editPost: function (req, res) {
@@ -106,9 +106,9 @@ const posteosController = {
             let id = req.params.id;
             let info = req.body;
             if (info.nombreImg == "") {
-                return res.redirect(`/posts/editPost/id/${id}`)
+                return res.redirect(`/post/editPost/id/${id}`)
             }   else if (info.textoPost == "") {
-                return res.redirect(`/posts/editPost/id/${id}`)
+                return res.redirect(`/post/editPost/id/${id}`)
             }
             let criterio = {
             where: [{
@@ -117,7 +117,7 @@ const posteosController = {
             }
             posts.update(info, criterio)
             .then(function (result) {
-                return res.redirect("/posts/detalle/id/" + id)
+                return res.redirect("/post/detalle/id/" + id)
             })
             .catch(function (error) {
                 res.send(error)
