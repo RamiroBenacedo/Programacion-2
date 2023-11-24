@@ -4,8 +4,23 @@ const op = db.Sequelize.Op;
 const posteosController = {
     detallePost: function(req, res){
         let id = req.params.id;
+        let relacion = {
+        include: {
+        all: true,
+        nested: true
+      }
+    };
+    db.Posteo.findByPk(id, relacion)
+      .then(function (result) {
+        res.send(result)
+        return res.render('detallePost', { idPost: id, usuario: result.posteoUsuarios, posteo: result });
+      })
+      .catch(function (error) {
+        return res.send(error)
+      })
+        /* let id = req.params.id;
         /* relaciones */
-        db.Posteo.findByPk(id, {include: [
+        /* db.Posteo.findByPk(id, {include: [
             {association: 'posteoComentarios', include: [{association: "comentarioUsuario"}]},
             {association: 'posteoUsuarios'}],
             order: [[{model: db.Comentario, as: "posteoComentarios"}, "createdAt", "DESC"]]
@@ -13,15 +28,15 @@ const posteosController = {
 
         .then((data)=> {
         console.log(id);
-        console.log(data);
-        //res.send(data)
-        return res.render('detallePost', {posteos: data});
+        console.log(data); */
+/*         res.send(data)
+ */       /*  return res.render('detallePost', {posteos: data});
         })
 
         .catch((error)=> {
         res.render()
-        })
-    },
+        })*/
+    }, 
 
         crearComentario: function (req, res) {
             if (req.session.user == undefined) {

@@ -15,10 +15,10 @@
             <% for( let i=0; i < posteos.length; i++ ) { %>
             <article class="post">
                 <div class="info-usuario ">
-                    <img class="perfil" src="<%= posteos[i].foto_de_perfil %>" alt="">
+                    <img class="perfil" src="<%= posteos[i].posteoUsuarios.foto_de_perfil %>" alt="">
                     <h4>
                         <a href="/users/detalleUsuario/id/<%= posteos[i].clienteId %>">
-                            <%= posteos[i].nombreUsuario %></a>
+                            <%= posteos[i].posteoUsuarios.nombre %></a>
                     </h4>
                 </div>
                 <div class="post-body">

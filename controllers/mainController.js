@@ -14,9 +14,8 @@ const mainController = {
     }
     db.Posteo.findAll(criterio)
     .then((result) => {
-/*        res.send(data)
- */       console.log(result)
-       res.render('index', {posteos: result})
+/*        res.send(result)
+ */        res.render('index', {posteos: result})
     })
     .catch((error) =>{
       return res.send({error});
