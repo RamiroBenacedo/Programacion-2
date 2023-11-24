@@ -9,37 +9,35 @@
 
     <main>
         <div class="user-detail container">
-            <% for( let i=0; i < usuario.length; i++ ) { %>
-                <% if (i+1==idUsuario) { %>
-                    <section class="top main-content">
-                        <img class="perfil" src="<%= usuario[i].fotoPerfil %>" alt="">
-                        <div class="info-usuario info-usuario-color">
-                            <p>
-                                <%= usuario[i].nombreUsuario %>
-                            </p>
-                            <a class="follow" href="/users/editarPerfil/id/<%= usuario[0].id %>"><i class="fa-solid fa-user-gear"></i></a>
-                            <ul class="meta">
-                                <li>100 post</li>
-                                <li>200 seguidores</li>
-                                <li>300 seguidos</li>
-                            </ul>
-                        </div>
-                    </section>
-                    <section class="bottom">
-                        <% for( let k=0; k< posteos.length; k++ ) { %>
-                            <% if (posteos[k].clienteid==idUsuario) { %>
-                                <article class="post">
-                                    <a href="/post/detallePost/id/<%= posteos[k].id %>">
-                                        <img src="<%= posteos[k].nombreImg %>" alt="">
-                                    </a>
-                                </article>
-                                <% } %>
-                                    <% } %>
-                    </section>
+            <section class="top main-content">
+                <img class="profile" src="<%= locals.user.foto_de_perfil %>">
+                <div class="info-usuario info-usuario-color">
+                    <p>
+                        <%= user.nombre %>
+                    </p>
+                    <% if (locals.user !=undefined && clienteId == user.id) { %>
+                        <div class="contenedor-editarPerfil">
+                            <a href="/users/editarPerfil/id/<%= user.id %>"><i class="fa-regular fa-pen-to-square fa-xl"></i></a></div>
+                    <% } %> 
+                    <a class="follow" href="">seguir</a>
+                    <ul class="meta">
+                        <li><%= posteos.length %> posteos</li>
+                        <li>200 seguidores</li>
+                        <li>300 seguidos</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="bottom">
+                <% for( let i=0; i < posteos.length; i++ ) { %>
+                    <article class="post">
+                        <a href="/posts/detalle/id/<%= posteos[i].id %>">
+                            <img src="<%= posteos[i].nombreImg %>" alt="Posteo">
+                        </a>
+                    </article>
                     <% } %>
-                    <% } %>
-
+            </section>
         </div>
+</main>
     </main>
 
     <%- include('./partials/footer') %>

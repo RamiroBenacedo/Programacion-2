@@ -12,22 +12,22 @@
         <h1>Editar perfil</h1>
         <form action= "/login" method="GET">
             <label  for="email"> Email:</label>
-            <input  type="email" id="email" name="email" value="" required>
+            <input  type="email" id="email" name="email" value="<%=usuarios.email %>" required>
 
             <label  for="nombre"> Nombre:</label>
-            <input  type="text" id="nombre" name="nombre" value="" required>
+            <input  type="text" id="nombre" name="nombre" value="<%=usuarios.nombre %>" required>
 
             <label  for="clave"> Clave:</label>
-            <input  type="password" id="clave" name="clave" value="" required>
+            <input  type="password" id="clave" name="clave" value="<%=usuarios.contrasena %>" required>
 
             <label for="dni">DNI:</label>
-            <input id="dni" type="number" name="dni" value="" required>
+            <input id="dni" type="number" name="dni" value="<%=usuarios.dni %>" required>
           
             <label  for="fotoPerfil"> Foto de Perfil:</label>
-            <input  type="text" id="fotoPerfil" name="fotoPerfil" value="">
+            <input  type="text" id="fotoPerfil" name="fotoPerfil" value="<%=usuarios.foto_de_perfil %>">
           
             <label for="fecha">Fecha de nacimiento:</label>
-            <input id="fecha" type="text" name="fecha" value="">
+            <input id="fecha" type="text" name="fecha" value="<%=usuarios.fecha_nacimiento %>">
           
             <button type="submit">Enviar</button>
           </form>
