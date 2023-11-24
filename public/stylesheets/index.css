@@ -15,7 +15,7 @@ a {
     font-weight: bold;
 }
 html {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
 }
 body {
     margin: 0;
@@ -30,8 +30,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 2px 2px;
-    border-bottom: 1px solid #ddd;
-    background-color: #487398;
+    background-color: #052028;
 }
 
 .logo{
@@ -39,21 +38,21 @@ body {
 }
 
 .search {
-    background-color: #40444b;
+    background-color: #052028;
     padding: 10px;
     border-radius: 10px;
     width: 300px;
 }
 .search input {
     border: none;
-    background-color: #40444b;
+    background-color: #052028;
     height: 26px;
     width: 90%;
     outline-width: 0;
     color: black;
 }
 .search i {
-    color: #090808;
+    color: #ffffff;
 }
 .menu{
     display: flex;
@@ -77,13 +76,13 @@ main {
 }
 
 .main-content {
-    max-width: 470px;
+    max-width: 400px;
 }
 
 .main-mi-perfil{
     padding: 1px 0;
     min-height: 100px;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
 }
 
 .main-mi-perfil-usuario{
@@ -94,15 +93,14 @@ main {
 
 /* post */
 .post{
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background-color: #0a0909;
+    border: 3px solid white;
+    border-radius: 5px;
     color: #03740c;
     margin-bottom: 20px;
 }
 .post-body img {
     width: 100%;
-    color:black;
 }
 
 .posteo-body{
@@ -180,7 +178,7 @@ main {
     margin-left: 20px;
 }
 
-/* Post detail */
+/* detalle posteo */
 .post-detail .container {
     display: flex;
     justify-content: center;
@@ -231,25 +229,24 @@ main {
 }
 
 .comment-form{
-    background: #fff;
-    padding: 15px 5px 10px;
+    padding: 0%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 5px;
+
 }
 .comment-form input {
     margin-bottom: 10px;
-    height: 25px;
-    border: none;
+    height: 50px;
+    border-radius: 15px;
+  
     outline-width: 0;
     color:#777
 }
 .comment-form button {
-    padding: 5px 0;
-    background-color:mediumseagreen;
-    border: 1px solid mediumaquamarine;
-    border-radius: 5px;
+    padding: 5px ;
+    background-color:rgb(14, 114, 114);
+    border-radius: 15px;
     color: #fff;
 }
 .comment-form button:hover {
@@ -261,15 +258,14 @@ main {
 }
 
 .post-comentarios{
-    color: rgb(241, 228, 228);
-    background-image:url(https://i.pinimg.com/564x/62/66/f9/6266f9227fadf6d2142b0b0137b8beaa.jpg)
-}
-
-.sin-resultados{
     color: white;
 }
 
-/* User detail */
+.sin-resultados{
+    color:rgb(255, 254, 254);
+}
+
+/* detalle usuario */
 
 .user-detail{
     display: flex;
@@ -290,8 +286,8 @@ main {
 }
 .user-detail .post{
     width: 200px;
-    padding: 5px 5px 20px 5px;
-    border-radius: 0;
+    padding: 10px;
+    border-radius: 20px;
 }
 .user-detail .post img{
     width: 100%;
@@ -302,25 +298,21 @@ main {
     flex-direction: row;
     align-items: center;
     padding-bottom: 20px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ddd;
-    max-width: 500px;
+    margin-bottom: 20px;
+    max-width: 1000px;
 }
 .follow {
     padding: 3px 20px 7px;
-    background-color: mediumseagreen;
-    border: 1px solid mediumaquamarine;
     border-radius: 5px;
-    color: #fff;
+    color:lightblue;
+    border: #0a0909;
     margin-left: 20px;
 }
-.follow:hover{
-    cursor: pointer;
-    background-color: forestgreen;
-}
+
 .profile {
-    border-radius: 90%;
-    width: 20%;
+    border-radius: 50px;
+    width: 10%;
+    color: white;
 }
 
 .user-detail .meta {
@@ -364,7 +356,7 @@ main {
 }
 
 .titulo-form{
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .mensaje-error{
@@ -374,14 +366,4 @@ main {
     align-items: center;
     flex-wrap: wrap;
     font-weight: bold;
-}
-
-.mensaje-busqueda{
-    color: rgb(163, 30, 30);
-    font-weight: bold;
-}
-
-.contenedor-trash{
-    padding-left: 150px;
-    justify-content: space-between;
 }
