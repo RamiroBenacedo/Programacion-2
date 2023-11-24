@@ -14,12 +14,12 @@ a {
     color: #222
 }
 html {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, G,eneva Tahoma, sans-serif;
 }
 body {
     margin: 0;
     padding: 0;
-    color:#777
+    color:#000000
 }
 /* navigation */
 header {
@@ -35,7 +35,6 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
     padding: 10px 10px;
     border-bottom: 1px solid #ddd;
 }
@@ -92,7 +91,7 @@ main {
 /* post */
 .post{
     background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
-    border: 1px solid #ddd;
+    
     border-radius: 10px;
     color: #777;
     margin-bottom: 20px;
@@ -101,10 +100,19 @@ main {
     width: 100%;
 }
 .info-usuario,
-.post-reacciones,
+.post-reacciones{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #e8ebee;
+}
 .post-comentarios {
     padding: 10px 15px
 }
+.post-comentarios li a {
+    margin-right: 10px;
+    color: white;}
 .info-usuario {
     display: flex;
     flex-wrap: wrap;
@@ -114,14 +122,13 @@ main {
     color: lightblue;
 }
 .colornombre{
-    color: white;
+    color: rgb(11, 11, 11);
 }
 .info-usuario img {
     margin-right: 10px;
     border-radius: 90%;
     padding: 1px;
-    border: 2px solid chocolate;
-}
+    border: 2px solid chocolate;}
 .post-reacciones {
     display: flex;
     flex-direction: row;
@@ -288,7 +295,7 @@ main {
     background-color: forestgreen;
 }
 .post {
-    border-radius: 90%;
+   
     border: 2px solid rgb(255, 255, 255);
     align-items: center;
 }
@@ -318,6 +325,7 @@ body{
 }
 .post{
     background-color: white;
+    
 }.post .info-usuario{
  border-bottom: black;
 }
