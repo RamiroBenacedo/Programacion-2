@@ -2,7 +2,6 @@
 const db=require("../database/models")
 const Posteo = db.Posteos;
 const op = db.Sequelize.Op;
-const comentarios=db.comentario;
 const posteosController = {
     detallePost: function(req, res){
         let id = req.params.id;
@@ -47,7 +46,7 @@ const posteosController = {
     },
         crearComentario: function(req,res){
             db.Comentario.create({
-                idusuario  : req.session.usuarioLogueado.id,
+                idUsuario  : req.session.user.id,
                 idPost: req.params.id,
                 campoTextoNombreImg	: req.body.comentario
             })
