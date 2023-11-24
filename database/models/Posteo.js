@@ -10,17 +10,7 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER,
             unique: true
         },
-        nombreUsuario: {
-            type: dataTypes.STRING,
-            unique: true
-        },
-        fotoPerfil: {
-            type: dataTypes.STRING
-        },
         nombreImg: {
-            type: dataTypes.STRING
-        },
-        textonombre: {
             type: dataTypes.STRING
         },
         textoposteo: {

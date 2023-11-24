@@ -44,7 +44,7 @@ const posteosController = {
           },
 
         agregarPost: function (req, res) {
-            if (res.locals.clienteId != undefined) {
+            if (res.locals.user != undefined) {
             return res.render('agregarPost');
             } else {
             return res.redirect('/login');
@@ -54,7 +54,7 @@ const posteosController = {
         storeAgregarPost: function (req, res) {
             let info = req.body;
             info.clienteId = req.session.user.id
-            db.Post.create(info)
+            db.Posteo.create(info)
             .then(function (result) {
                 return res.redirect('/')
             })
@@ -88,7 +88,7 @@ const posteosController = {
                 res.send(error)
             })
         },
-        
+
         updatePost: function (req, res) {
             let id = req.params.id;
             let info = req.body;
