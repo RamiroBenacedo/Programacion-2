@@ -7,19 +7,17 @@ const mainController = {
     db.Posteo.findAll({
       include: [
        {association: "posteoUsuarios"},
-        
-        {association: "posteoComentarios"}
-  ],
-      order: [['createdAt', 'DESC']]
-    })
+        {association: "comentarioUsuario"},
+        {association: "posteoComentarios"},],
+      order: [['createdAt', 'DESC']]})
     .then((data) => {
+      console.log(data)
        res.render('index', {posteos: data})
     })
     .catch((error) =>{
       return res.send({data:error});
     })},
-
-  
+    
   login: function (req, res) {
     if (req.session.user != undefined) {
       return res.redirect('/')
