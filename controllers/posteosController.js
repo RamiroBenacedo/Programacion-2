@@ -24,49 +24,27 @@ const posteosController = {
         res.render()
         })
     },
-    cartelagregarpost: function(req,res){
-        if (res.locals.user !=undefined){
-            return res.render('agregarpost');
-        }else{
-            return res.redirect('/login');}
-        },
 
-    resultadoBusqueda: function(req,res){ 
+    resultadoBusqueda: function(req,res){
         let busqueda= req.query.search
-             db.Posteo.findAll({ 
-                include: [{association: "posteoUsuarios"}], 
+            db.Posteo.findAll({
+                include: [{association: "posteoUsuarios"}],
                 where: {
                     [op.or]: [
                         {nombreImg: {[op.like] : "%" + busqueda+ "%"}},
                         {textonombre:   {[op.like] : "%" + busqueda+ "%"}}]} ,
                 order:[[ "createdAt", "DESC"]]
-            }) 
+            })
             .then(data => {
                 return res.render( "resultadoBusqueda", {posteos:data})
 
-            })  
-            
+            })
+
             .catch(error =>  {
                 res.send(error)
             })
-        
+
     },
-    agregarPost: function(req, res){
-        return res.render('agregarPost')},
-        crearPost: function(req, res){
-            db.Posteo.create ({
-                clienteid: req.session.usuarioLogueado.id,
-                campoTextoNombreImg: req.body.imagen,
-                campoTextoPiePost: req.body.nombreProducto,
-            })
-            .then((data)=> {
-                return res.redirect('/')
-            })
-            .catch((error)=>{
-                res.send(error)
-            })
-            
-        },
         crearComentario: function(req,res){
             db.Comentario.create({
                 idusuario  : req.session.usuarioLogueado.id,
@@ -80,52 +58,71 @@ const posteosController = {
                 res.send(error)
             })
         },
-        editarPosteo: function (req, res) {
-            db.Posteo.update({
-                campoTextoNombreImg: req.body.nombreProducto,
-                campoTextoPiePost: req.body.descripcion,
-            }, {where: {id: req.params.id}}
-            
-            )  
-            .then((data)=> {
-                return res.redirect('/')
-            })
-            .catch((error) => {
-                res.send(error)
-            })
-        },
-        editarPosteoGet: function(req, res){
-            let id= req.params.id
-            Posteo.findByPk(id)
-    
-                .then((data)=> {
-                //res.send(data)
-                return res.render("editarPerfil", {Posteo:data}) //le paso otros datos
-    
-                }). catch((error)=> {
-                res.send(error)
-                })
-                      
-        },
-        subirposteo: function(req,res){
-            if(res.locals.user !=undefined){
-                return res.render("agregarPost");}
-                else{return res.redirect('/login');
+
+        showAgregarPost: function (req, res) {
+            if (res.locals.idUsuario != undefined) {
+            return res.render('agregarPost');
+            } else {
+            return res.redirect('/login');
             }
         },
 
-
-        eliminarPosteo: function(req,res) {
-            let id= Number(req.params.id);
-            Posteo.destroy({where: {id: id}})
-            .then(function(data)  {
+        storeAgregarPost: function (req, res) {
+            let info = req.body;
+            info.idUsuario = req.session.user.id
+            posts.create(info)
+            .then(function (result) {
                 return res.redirect('/')
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 res.send(error)
             })
-        }
-    
+        },
+        deletePost: function (req, res) {
+            let id = Number(req.params.id);
+            let criterio = {
+                where: [{ id: id }]
+            }
+            posts.destroy(criterio)
+                .then(function (result) {
+                return res.redirect('/')
+            })
+            .catch(function (error) {
+                res.send(error)
+                res.redirect('/posts/detalle/id/'+ id)
+            })
+        },
+        editPost: function (req, res) {
+            let id = Number(req.params.id);
+            posts.findByPk(id)
+                .then(function (result) {
+                res.render("editarPost", { post: result })
+            })
+                .catch(function (error) {
+                res.send(error)
+            })
+        },
+        updatePost: function (req, res) {
+            let id = req.params.id;
+            let info = req.body;
+            if (info.nombreImg == "") {
+                return res.redirect(`/posts/editPost/id/${id}`)
+            }   else if (info.textoPost == "") {
+                return res.redirect(`/posts/editPost/id/${id}`)
+            }
+            let criterio = {
+            where: [{
+                id: id
+            }]
+            }
+            posts.update(info, criterio)
+            .then(function (result) {
+                return res.redirect("/posts/detalle/id/" + id)
+            })
+            .catch(function (error) {
+                res.send(error)
+            })
+        },
     };
 
 module.exports = posteosController
