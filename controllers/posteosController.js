@@ -65,19 +65,19 @@ const posteosController = {
             let criterio = {
                 where: [{ id: id }]
             }
-            db.Post.destroy(criterio)
+            db.Posteo.destroy(criterio)
                 .then(function (result) {
                 return res.redirect('/')
             })
             .catch(function (error) {
-                res.send(error)
+                console.log(error)
                 res.redirect('/post/detalle/id/'+ id)
             })
         },
 
         editPost: function (req, res) {
             let id = Number(req.params.id);
-            db.Post.findByPk(id)
+            db.Posteo.findByPk(id)
                 .then(function (result) {
                 res.render("editarPost", { post: result })
             })
@@ -99,7 +99,7 @@ const posteosController = {
                 id: id
             }]
             }
-            db.Post.update(info, criterio)
+            db.Posteo.update(info, criterio)
             .then(function (result) {
                 return res.redirect("/post/detalle/id/" + id)
             })

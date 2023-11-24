@@ -68,7 +68,7 @@ const mainController = {
         res.cookie('userId', result.id, {maxAge:1000 * 60 * 5})
         res.send(rememberMe)
         }
-        return res.redirect("/post/agregar")}
+        return res.redirect("/")}
         else {
           errors.message = "La contraseña es incorrecta";
           res.locals.errors = errors;
