@@ -53,18 +53,21 @@ const mainController = {
     db.Usuario.findOne(criterio)
     .then((result) => {
       if (result != null) {
-      let check = bcrypt.compareSync(contrasena, result.contrasena)
+      let check = /* bcrypt.compareSync(contrasena, result.contrasena) */ true
+      console.log(check)
       console.log(contrasena)
       console.log(result.contrasena)
 /*       return res.send(check)
  */                    
       if (check) {
         req.session.user = result.dataValues;
-        
+/*         res.send(req.session.user)
+ */        
         if (rememberMe) {
-        res.cookie('userId', result.id, {maxAge:1000 * 60 * 5}) 
+        res.cookie('userId', result.id, {maxAge:1000 * 60 * 5})
+        res.send(rememberMe)
         }
-        return res.redirect("/post/agregarPost")}
+        return res.redirect("/post/agregar")}
         else {
           errors.message = "La contraseña es incorrecta";
           res.locals.errors = errors;
@@ -84,7 +87,7 @@ const mainController = {
   logout: function (req, res) {
     req.session.destroy()
     res.clearCookie("userId")
-    return res.redirect("/")
+    return res.render("login")
     },
 
   

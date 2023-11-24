@@ -1,12 +1,11 @@
-
 const db=require("../database/models")
-const Posteo = db.Posteos;
 const op = db.Sequelize.Op;
+
 const posteosController = {
     detallePost: function(req, res){
         let id = req.params.id;
         /* relaciones */
-        Posteo.findByPk(id, {include: [
+        db.Posteo.findByPk(id, {include: [
             {association: 'posteoComentarios', include: [{association: "comentarioUsuario"}]},
             {association: 'posteoUsuarios'}],
             order: [[{model: db.Comentario, as: "posteoComentarios"}, "createdAt", "DESC"]]
@@ -24,42 +23,28 @@ const posteosController = {
         })
     },
 
-    resultadoBusqueda: function(req,res){
-        let busqueda= req.query.search
-            db.Posteo.findAll({
-                include: [{association: "posteoUsuarios"}],
-                where: {
-                    [op.or]: [
-                        {nombreImg: {[op.like] : "%" + busqueda+ "%"}},
-                        {textonombre:   {[op.like] : "%" + busqueda+ "%"}}]} ,
-                order:[[ "createdAt", "DESC"]]
-            })
-            .then(data => {
-                return res.render( "resultadoBusqueda", {posteos:data})
-
-            })
-
-            .catch(error =>  {
-                res.send(error)
-            })
-
-    },
-        crearComentario: function(req,res){
+        crearComentario: function (req, res) {
+            if (req.session.user == undefined) {
+              return res.redirect('/login')
+            } else {
+              let comentario = req.body.comentario;
             db.Comentario.create({
-                idUsuario  : req.session.user.id,
-                idPost: req.params.id,
-                campoTextoNombreImg	: req.body.comentario
+              idPost: req.params.id,
+              idUsuario: req.session.user.id,
+              textoComment: comentario
             })
-            .then((data)=> {
-                return res.redirect('/')
-            })
-            .catch((error)=>{
+              .then(function (result) {
+                let idPost = req.params.id;
+                return res.redirect('/post/detalle/id/'+ idPost);
+              })
+              .catch(function (error) {
                 res.send(error)
-            })
-        },
+              })
+            }
+          },
 
-        showAgregarPost: function (req, res) {
-            if (res.locals.idUsuario != undefined) {
+        agregarPost: function (req, res) {
+            if (res.locals.clienteId != undefined) {
             return res.render('agregarPost');
             } else {
             return res.redirect('/login');
@@ -68,8 +53,8 @@ const posteosController = {
 
         storeAgregarPost: function (req, res) {
             let info = req.body;
-            info.idUsuario = req.session.user.id
-            posts.create(info)
+            info.clienteId = req.session.user.id
+            db.Post.create(info)
             .then(function (result) {
                 return res.redirect('/')
             })
@@ -77,12 +62,13 @@ const posteosController = {
                 res.send(error)
             })
         },
+
         deletePost: function (req, res) {
             let id = Number(req.params.id);
             let criterio = {
                 where: [{ id: id }]
             }
-            posts.destroy(criterio)
+            db.Post.destroy(criterio)
                 .then(function (result) {
                 return res.redirect('/')
             })
@@ -91,9 +77,10 @@ const posteosController = {
                 res.redirect('/post/detalle/id/'+ id)
             })
         },
+
         editPost: function (req, res) {
             let id = Number(req.params.id);
-            posts.findByPk(id)
+            db.Post.findByPk(id)
                 .then(function (result) {
                 res.render("editarPost", { post: result })
             })
@@ -101,12 +88,13 @@ const posteosController = {
                 res.send(error)
             })
         },
+        
         updatePost: function (req, res) {
             let id = req.params.id;
             let info = req.body;
             if (info.nombreImg == "") {
                 return res.redirect(`/post/editPost/id/${id}`)
-            }   else if (info.textoPost == "") {
+            }   else if (info.textoposteo == "") {
                 return res.redirect(`/post/editPost/id/${id}`)
             }
             let criterio = {
@@ -114,7 +102,7 @@ const posteosController = {
                 id: id
             }]
             }
-            posts.update(info, criterio)
+            db.Post.update(info, criterio)
             .then(function (result) {
                 return res.redirect("/post/detalle/id/" + id)
             })

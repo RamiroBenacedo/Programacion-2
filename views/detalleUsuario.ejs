@@ -11,12 +11,6 @@
             <%- include('./partials/header') %>
         <% } %>
 
-    <main>
-         <% if (locals.user !=undefined) { %>
-            <%- include('./partials/headerLog') %>
-            <% } else { %>
-                <%- include('./partials/header') %>
-            <% } %>
             <main>
                 <% if (clienteId<0) { %>
                     <h2 class="sin-resultados">No hay resultados para ese id. Por favor eliia otro</h2>
