@@ -1,8 +1,8 @@
-/* Generics */
+
 *{
     box-sizing: border-box;
 }
-ul, ol {
+ul,ol {
     padding: 0;
     margin: 0;
 }
@@ -11,53 +11,49 @@ li{
 }
 a {
     text-decoration: none;
-    color: #222
+    color: white;
+    font-weight: bold;
 }
 html {
-    font-family: Verdana, G,eneva Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
     margin: 0;
     padding: 0;
-    color:#000000
+    background-image:url(https://i.pinimg.com/564x/62/66/f9/6266f9227fadf6d2142b0b0137b8beaa.jpg)
 }
 /* navigation */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
-}
 .main-nav {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
+    padding: 2px 2px;
     border-bottom: 1px solid #ddd;
+    background-color: #487398;
 }
 
 .logo{
-    font-size: 18px;
+    font-size: 15px;
 }
+
 .search {
-    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
+    background-color: #40444b;
     padding: 10px;
     border-radius: 10px;
     width: 300px;
 }
 .search input {
     border: none;
-    background-color: transparent;
+    background-color: #40444b;
     height: 26px;
-    color: #888;
     width: 90%;
     outline-width: 0;
+    color: black;
 }
 .search i {
-    color: #888;
+    color: #090808;
 }
 .menu{
     display: flex;
@@ -75,65 +71,72 @@ header {
 
 /* Main */
 main {
-    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 100px 0;
-    min-height: 600px;
 }
 
 .main-content {
     max-width: 470px;
 }
 
+.main-mi-perfil{
+    padding: 1px 0;
+    min-height: 100px;
+    padding-bottom: 60px;
+}
+
+.main-mi-perfil-usuario{
+    min-height: 50px;
+    padding-top: 100px;
+    padding-bottom: 0px;
+}
+
 /* post */
 .post{
-    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
-    
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    color: #777;
+    color: #03740c;
     margin-bottom: 20px;
 }
 .post-body img {
     width: 100%;
+    color:black;
 }
-.info-usuario,
-.post-reacciones{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: #e8ebee;
+
+.posteo-body{
+    color:black;
 }
 .post-comentarios {
     padding: 10px 15px
 }
-.post-comentarios li a {
-    margin-right: 10px;
-    color: white;}
 .info-usuario {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content:flex-start;
     align-items: center;
-    color: lightblue;
+    background-color:black
 }
-.colornombre{
-    color: rgb(11, 11, 11);
-}
+
 .info-usuario img {
     margin-right: 10px;
-    border-radius: 90%;
+    border-radius: 80%;
     padding: 1px;
-    border: 2px solid chocolate;}
+}
+
+.info-usuario-color{
+    background-color: #27313b;
+    color: white;
+}
+
 .post-reacciones {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    background-color: #181F25;
 }
 .post-reacciones li{
     margin-right: 10px;
@@ -144,7 +147,7 @@ main {
 }
 .post-comentarios li a {
     margin-right: 10px;
-    color: #000;
+    color: white;
 }
 .post-comentarios h4 {
     margin: 0 0 10px 0;
@@ -165,9 +168,10 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
+    background: #27313b;
     border-top: 1px solid #ddd;
     padding: 20px 10px;
+    color: white;
 }
 .social li {
     margin-right: 20px;
@@ -190,6 +194,11 @@ main {
 .post-detail .photo {
     width: 100%;
 }
+
+.mi-perfil-content{
+    width: 300px;
+}
+
 .post-detail .right {
     width: 34%;
 }
@@ -209,17 +218,22 @@ main {
     margin-right: 10px;
     border-radius: 90%;
     padding: 1px;
-    border: 2px solid chocolate;
+   justify-content: baseline;
 }
 .comment .text {
     font-size: 12px;
-    color: #777;
+    color: white;
 }
 .comment .content {
     line-height: 1;
 }
+
+.comment .content a{
+    color: white;
+}
+
 .comment-form{
-    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
+    background: #fff;
     padding: 15px 5px 10px;
     display: flex;
     flex-direction: column;
@@ -238,12 +252,25 @@ main {
     background-color:mediumseagreen;
     border: 1px solid mediumaquamarine;
     border-radius: 5px;
-    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
+    color: #fff;
 }
 .comment-form button:hover {
     cursor: pointer;
-    background-color: forestgreen;
 }
+
+.fa-heart{
+    color: red;
+}
+
+.post-comentarios{
+    color: rgb(241, 228, 228);
+    background-image:url(https://i.pinimg.com/564x/62/66/f9/6266f9227fadf6d2142b0b0137b8beaa.jpg)
+}
+
+.sin-resultados{
+    color: white;
+}
+
 /* User detail */
 
 .user-detail{
@@ -251,7 +278,6 @@ main {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #000;
 }
 .user-detail .info-usuario{
     justify-content: space-between;
@@ -287,17 +313,16 @@ main {
     background-color: mediumseagreen;
     border: 1px solid mediumaquamarine;
     border-radius: 5px;
-    background-image: url(https://ar.pinterest.com/pin/4081455905062505/);
+    color: #fff;
     margin-left: 20px;
 }
 .follow:hover{
     cursor: pointer;
     background-color: forestgreen;
 }
-.post {
-   
-    border: 2px solid rgb(255, 255, 255);
-    align-items: center;
+.profile {
+    border-radius: 90%;
+    width: 20%;
 }
 
 .user-detail .meta {
@@ -308,40 +333,57 @@ main {
     width: 100%;
 }
 
-.perfil{
-    width: 25%;
-    border-radius: 90%;
-}
-footer{
-    color: black;
-    background-color:white;
-}
-header{
-    color: black;
-    background-color: white;
-}
-body{
- background-image: url(https://i.pinimg.com/564x/62/66/f9/6266f9227fadf6d2142b0b0137b8beaa.jpg);
-}
-.post{
-    background-color: white;
-    
-}.post .info-usuario{
- border-bottom: black;
-}
-form{
-    color: white;
-}
-.comments{
-    color: white;
-    background-color: lightblue;
+.caption-posteo{
+    display: flex;
 }
 
-.center{
-    background-color: black;
-    border-radius: 10px;
-    height: 200px;
+.usuario-caption{
+    color: white;
+    padding-right: 4%;
+    font-size: 100%;
 }
-.comentarios{
+
+/* Register */
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: #181F25;
+    padding: 10%;
+    color: white;
+}
+
+.form button{
+    padding: 5px 0;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 10%;
+    width: 85%;
+    align-self: center;
+}
+
+.fondo-form{
+    width: 60%;
+}
+
+.titulo-form{
+    color: white;
+}
+
+.mensaje-error{
     color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-weight: bold;
+}
+
+.mensaje-busqueda{
+    color: rgb(163, 30, 30);
+    font-weight: bold;
+}
+
+.contenedor-trash{
+    padding-left: 150px;
+    justify-content: space-between;
 }
