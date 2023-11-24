@@ -42,11 +42,11 @@ const usersController = {
           return res.redirect(`/users/editarPerfil/id/${id}`)
         } else if (info.email == "") {
           return res.redirect(`/users/editarPerfil/id/${id}`)
-        } else if (info.pass == "") {
+        } else if (info.contrasena == "") {
             return res.redirect(`/users/editarPerfil/id/${id}`)
-        } else if (info.fotoPerfil == "") {
+        } else if (info.foto_de_perfil == "") {
             return res.redirect(`/users/editarPerfil/id/${id}`)
-        } else if (info.fecha == "") {
+        } else if (info.fecha_nacimiento == "") {
             return res.redirect(`/users/editarPerfil/id/${id}`)
         } else if (info.dni == "") {
             return res.redirect(`/users/editarPerfil/id/${id}`)

@@ -18,24 +18,6 @@ const posteosController = {
       .catch(function (error) {
         return res.send(error)
       })
-        /* let id = req.params.id;
-        /* relaciones */
-        /* db.Posteo.findByPk(id, {include: [
-            {association: 'posteoComentarios', include: [{association: "comentarioUsuario"}]},
-            {association: 'posteoUsuarios'}],
-            order: [[{model: db.Comentario, as: "posteoComentarios"}, "createdAt", "DESC"]]
-        })
-
-        .then((data)=> {
-        console.log(id);
-        console.log(data); */
-/*         res.send(data)
- */       /*  return res.render('detallePost', {posteos: data});
-        })
-
-        .catch((error)=> {
-        res.render()
-        })*/
     }, 
 
         crearComentario: function (req, res) {
@@ -46,7 +28,7 @@ const posteosController = {
             db.Comentario.create({
               idPost: req.params.id,
               idUsuario: req.session.user.id,
-              textoComment: comentario
+              campoTextoNombreImg: comentario
             })
               .then(function (result) {
                 let idPost = req.params.id;

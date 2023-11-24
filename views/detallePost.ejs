@@ -16,16 +16,16 @@
                                 <p><a href="/users/detalleUsuario/id/<%= usuario.id %>"><%= usuario.nombre %></a></p>
                                 <% if (locals.user !=undefined && usuario.id == user.id) { %>
                                     <div class="contenedor-trash">
-                                        <a href="/post/eliminarPosteo/id/<%= idPost %>"><i class="fa-regular fa-trash-can fa-xl" style="color: #ffffff;"></i></a>
-                                        <a href="/post/editarPosteo/id/<%= idPost %>"><i class="fa-regular fa-pen-to-square fa-xl" style="color: #ffffff;"></i></a></div>
+                                        <a href="/post/deletePost/id/<%= idPost %>"><i class="fa-regular fa-trash-can fa-xl" style="color: red;"></i></a>
+                                        <a href="/post/editPost/id/<%= idPost %>"><i class="fa-regular fa-pen-to-square fa-xl" style="color: red;"></i></a></div>
                                 <% } %> 
                             </div>
-                            <img class="photo" src="<%= posteo.nombreImg %>" alt="Foto del posteo">
+                            <img class="photo" src="<%= posteo.nombreImg %>">
                         </section>
                         <section class="right">
                             <h4 class="titulo-form">Comentarios</h4>
                             <section class="comments">
-                                <form action= '/posts/crearcomentario/id/<%=idPost%>' class="comment-form" method="POST" >
+                                <form action= '/post/crearcomentario/id/<%=idPost%>' class="comment-form" method="POST" >
                                     <input type="text" class="input" placeholder="Agregar comentario" name="comentario">
                                     <button type="submit">Comentar</button>
                                 </form>

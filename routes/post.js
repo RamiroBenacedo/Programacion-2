@@ -14,7 +14,7 @@ router.get('/editPost/id/:id', posteosController.editPost);
 
 router.post('/updatePost/id/:id', posteosController.updatePost);
 
-router.post('/crearComent/id/:id', posteosController.crearComentario);
+router.post('/crearcomentario/id/:id', posteosController.crearComentario);
 
 
 module.exports = router;
