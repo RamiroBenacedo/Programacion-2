@@ -162,14 +162,13 @@ main {
     align-items: center;
 }
 .main-footer {
-    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     background: #27313b;
-    border-top: 1px solid #ddd;
-    padding: 20px 10px;
+    padding: 10px 10px;
     color: white;
+    
 }
 .social li {
     margin-right: 20px;
@@ -334,36 +333,14 @@ main {
 }
 
 /* Register */
-.form{
-    display: flex;
-    flex-direction: column;
-    background-color: #181F25;
-    padding: 10%;
+form{
+    background-color: #030303;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    width: 700px;
     color: white;
 }
-
-.form button{
-    padding: 5px 0;
-    border-radius: 5px;
-    color: #fff;
-    margin-top: 10%;
-    width: 85%;
-    align-self: center;
-}
-
-.fondo-form{
-    width: 60%;
-}
-
-.titulo-form{
-    color: rgb(255, 255, 255);
-}
-
-.mensaje-error{
-    color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    font-weight: bold;
+h1{
+    color: white;
 }
