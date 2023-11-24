@@ -5,7 +5,7 @@ USE usuarios;
 CREATE TABLE usuario (
 	/* nombreDeColumna  tipoDeDato  restricciones */
 	id       INT         UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-	contrasena          VARCHAR(50) NOT NULL,
+	contrasena          VARCHAR(500) NOT NULL,
 	email            VARCHAR(50) NOT NULL UNIQUE,
     nombre              VARCHAR(250) NOT NULL,
 	foto_de_perfil       VARCHAR(50) NULL,

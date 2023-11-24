@@ -53,7 +53,7 @@ const mainController = {
     db.Usuario.findOne(criterio)
     .then((result) => {
       if (result != null) {
-      let check = /* bcrypt.compareSync(contrasena, result.contrasena) */ true
+      let check =  /* bcrypt.compareSync(contrasena, result.contrasena) */ true
       console.log(check)
       console.log(contrasena)
       console.log(result.contrasena)
