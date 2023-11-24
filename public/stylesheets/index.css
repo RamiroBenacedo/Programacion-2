@@ -287,9 +287,10 @@ main {
     cursor: pointer;
     background-color: forestgreen;
 }
-.profile {
+.post {
     border-radius: 90%;
-    border: 2px solid chocolate;
+    border: 2px solid rgb(255, 255, 255);
+    align-items: center;
 }
 
 .user-detail .meta {

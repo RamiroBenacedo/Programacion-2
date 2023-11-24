@@ -12,29 +12,29 @@
         <% } %>
 
             <main>
-                <% if (clienteId<0) { %>
-                    <h2 class="sin-resultados">No hay resultados para ese id. Por favor eliia otro</h2>
+                <% if (idUsuario<0) { %>
+                    <h2 class="sin-resultados">No hay resultados</h2>
                     <% } else {%>
                         <div class="user-detail container">
-                            <section class="top main-content">
-                                <img class="post" src="<%= Usuario.foto_de_perfil %>" alt="Foto de perfil">
+                            <section class="tp main-content">
+                                <img class="post" src="<%= usuario.foto_de_perfil %>" alt="Foto de perfil">
                                 <div class="info-usuario info-usuario-color">
                                     <p>
-                                        <%= Usuario.nombre %>
+                                        <%= usuario.nombre %>
                                     </p>
                                     <a class="follow" href="">seguir</a>
                                     <ul class="meta">
-                                        <li><%= posteosUsuario.length %> posteos</li>
-                                        <li>200 seguidores</li>
-                                        <li>300 seguidos</li>
+                                        <li><%= posteos.length %> posteos</li>
+                                        <li>1000 seguidores</li>
+                                        <li>500 seguidos</li>
                                     </ul>
                                 </div>
                             </section>
                             <section class="bottom">
-                                <% for( let i=0; i < posteosUsuario.length; i++ ) { %>
+                                <% for( let i=0; i < posteos.length; i++ ) { %>
                                         <article class="post">
-                                            <a href="/posts/detalle/id/<%= posteosUsuario[i].id %>">
-                                                <img src="<%= posteosUsuario[i].nombreImg %>" alt="Posteo">
+                                            <a href="/detalle/post/id/<%= posteos[i].id %>">
+                                                <img src="<%= posteos[i].nombreImg %>" alt="Posteo">
                                             </a>
                                         </article>
                                             <% } %>
