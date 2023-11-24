@@ -4,18 +4,22 @@ const bcrypt = require('bcryptjs');
 
 const mainController = {
   index: function (req, res) {
-    db.Posteo.findAll({
-      include: [
-       {association: "posteoUsuarios"},
-        {association: "comentarioUsuario"},
-        {association: "posteoComentarios"},],
-      order: [['createdAt', 'DESC']]})
-    .then((data) => {
-      console.log(data)
-       res.render('index', {posteos: data})
+    let id = req.params.id;
+    let criterio = {
+      order: [['createdAt', 'DESC']], 
+      include: {
+        all: true,
+        nested: true
+      }
+    }
+    db.Posteo.findAll(criterio)
+    .then((result) => {
+/*        res.send(data)
+ */       console.log(result)
+       res.render('index', {posteos: result})
     })
     .catch((error) =>{
-      return res.send({data:error});
+      return res.send({error});
     })},
     
   login: function (req, res) {

@@ -44,6 +44,7 @@
                     <h4>Comentarios</h4>
                     <ul>
                         <% for( let k=0; k < 2; k++ ) { %>
+                            <% if (posteos[i].posteoComentarios[k] != undefined) { %>
                         <li><a
                                 href="/users/detalleUsuario/id/<%= posteos[i].posteoComentarios[k] %>">
                                 <%= posteos[i].posteoComentarios[k].comentarioUsuario.nombre%>
@@ -52,6 +53,7 @@
                                 <%= posteos[i].posteoComentarios[k].campoTextoNombreImg %>
                             </span>
                         </li>
+                        <% } %>
                         <% } %>
                             <a href="/post/detalle/id/<%= posteos[i].clienteId %>">Ver más...</a>
                     </ul>
