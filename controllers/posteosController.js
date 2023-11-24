@@ -12,8 +12,8 @@ const posteosController = {
     };
     db.Posteo.findByPk(id, relacion)
       .then(function (result) {
-        res.send(result)
-        return res.render('detallePost', { idPost: id, usuario: result.posteoUsuarios, posteo: result });
+/*          res.send(result)
+ */         return res.render('detallePost', { idPost: id, usuario: result.posteoUsuarios, posteo: result });
       })
       .catch(function (error) {
         return res.send(error)

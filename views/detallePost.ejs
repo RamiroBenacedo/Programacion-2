@@ -30,12 +30,12 @@
                                     <button type="submit">Comentar</button>
                                 </form>
                                 <div>
-                                    <% for( let i= posteo.posteosUsuarios.usuarioComentarios.length - 1; i >= 0; i-- ) { %>
+                                    <% for( let i= posteo.posteoComentarios.length - 1; i >= 0; i-- ) { %>
                                     <article class="comment">
-                                        <img class = "profile" src="<%= posteoUsuarios.posteoComentarios[i].comentarioUsuario.foto_de_Perfil %>" alt="<%= posteosUsuario.posteoComentarios[i].comentarioUsuario.nombre %>">
+                                        <img class = "profile" src="<%= posteo.posteoComentarios[i].comentarioUsuario.foto_de_Perfil %>" alt="<%= posteo.posteoComentarios[i].comentarioUsuario.nombre %>">
                                         <section class="content">
-                                            <a class="user" href="/usuarios/detalleUsuario/id/<%= posteoUsuario.posteoComentarios[i].comentarioUsuario.id %>"><%= posteoUsuario.posteoComentario[i].comentarioUsuario.nombre%></a>
-                                            <span class="text"><%= posteoUsuario.posteoComentarios[i].campoTextoNombreImg %></span>
+                                            <a class="user" href="/users/detalleUsuario/id/<%= posteo.posteoComentarios[i].comentarioUsuario.id%>"><%= posteo.posteoComentarios[i].comentarioUsuario.nombre%></a>
+                                            <span class="text"><%= posteo.posteoComentarios[i].campoTextoNombreImg %></span>
                                         </section>
                                     </article>
                                     <% } %>
