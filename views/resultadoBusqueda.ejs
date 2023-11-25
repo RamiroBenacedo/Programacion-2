@@ -12,54 +12,50 @@
         <% } %>
     <main>
         <section class="center main-content">
-            <% for( let i=0; i < posteos.length; i++ ) { %>
-                <article class="post">
-                    <div class="info-usuario ">
-                        <img class="perfil" src="<%= posteos[i].fotoPerfil %>" alt="">
-                        <h4>
-                            <a href="/users/detalleUsuario/id/<%= posteos[i].clienteId %>">
-                                <%= posteos[i].nombreUsuario %></a>
-                        </h4>
-                    </div>
-                    <div class="post-body">
-                        <a href="/posts/detalle/id/<%= posteos[i].id %>">
-                            <img src="<%= posteos[i].nombreImg %>" alt=""></a>
-                    </div>
-                    <ul class="post-reacciones">
-                        <li>
-                            <i class="fa-regular fa-heart"></i>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-comment"></i>
-                        </li>
-                    </ul>
-                    <div class="post-comentarios">
-                        <h3 class="texto-usuario">
-                            <%= posteos[i].nombreUsuario %>
-                        </h3>
-                        <p>
-                            <%= posteos[i].textoPost %>
-                        </p>
-    
-                        <h4>Comentarios</h4>
-                        <ul>
-                            <% for( let k=0; k < 2; k++ ) { %>
-                            <li><a
-                                    href="/users/detalleUsuario/id/<%= posteos[i].comentarios[k].clienteId %>">
-                                    <%= posteos[i].comentarios[k].nombre%>
-                                </a>
-                                <span>
-                                    <%= posteos[i].comentarios[k].textoComentario %>
-                                </span>
-                            </li>
+            <% if (posteos.length <= 0 ) { %>
+                <p class="mensaje-error">No hay resultados para su criterio de busqueda: <%= criterio %></p>
+                <% } else { %>   
+                    <p class="mensaje-error">El resultado de la busqueda "<%= criterio %>" es:</p>
+                    <section class="center main-content">
+                        <% for( let i=0; i < posteos.length; i++ ) { %>
+                            <article>
+                                <div class="info-usuario ">
+                                    <img class="profile" src="<%= posteos[i].posteoUsuarios.foto_de_perfil %>"
+                                        alt="<%= posteos[i].posteoUsuarios.nombre %>">
+                                    <h4>
+                                        <a href="/users/detalleUsuario/id/<%= posteos[i].posteoUsuarios.id %>">
+                                            <%= posteos[i].posteoUsuarios.nombre %>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div class="post-body">
+                                    <a href="/post/detalle/id/<%= posteos[i].id %>">
+                                        <img src="<%= posteos[i].nombreImg %>">
+                                    </a>
+                                </div>
+                                <ul class="post-reacciones">
+                                    <li>
+                                        <i class="fa-regular fa-heart"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-comment"></i>
+                                    </li>
+                                </ul>
+                                <div class="post-comentarios">
+                                    <span class="caption-posteo">
+                                        <h3 class="usuario-caption">
+                                            <%= posteos[i].posteoUsuarios.nombre %>
+                                        </h3>
+                                        <p>
+                                            <%= posteos[i].textoposteo %>
+                                        </p>
+                                    </span>
+                                </div>
+                            </article>
                             <% } %>
-                                <a href="/post/detalle/id/<%= posteos[i].id %>">Ver más...</a>
-                        </ul>
-                    </div>
-                </article>
-            <% } %>
-
-        </section>
+    
+                    </section>
+                    <% } %>
     </main>
 
     <%- include('./partials/footer') %>

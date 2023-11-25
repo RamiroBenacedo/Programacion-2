@@ -14,8 +14,8 @@ const mainController = {
     }
     db.Posteo.findAll(criterio)
     .then((result) => {
-/*        res.send(result)
- */        res.render('index', {posteos: result})
+/*         res.send(result)
+ */         res.render('index', {posteos: result})
     })
     .catch((error) =>{
       return res.send({error});
@@ -54,7 +54,7 @@ const mainController = {
     db.Usuario.findOne(criterio)
     .then((result) => {
       if (result != null) {
-      let check =  /* bcrypt.compareSync(contrasena, result.contrasena) */ true
+      let check =  bcrypt.compareSync(contrasena, result.contrasena)
       console.log(check)
       console.log(contrasena)
       console.log(result.contrasena)
@@ -189,7 +189,7 @@ else{
     }
     db.Posteo.findAll(filtro)
       .then(function (results) {
-        return res.render("resultadoBusqueda", { posts: results, criterio: busqueda })
+        return res.render("resultadoBusqueda", { posteos: results, criterio: busqueda })
       })
       .catch(function (error) {
         res.send(error)

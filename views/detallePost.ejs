@@ -13,9 +13,9 @@
                         <section class="center main-content post">
                             <div class="info-usuario">
                                 <img class="profile" src="<%= usuario.foto_de_perfil %>" alt="Foto de perfil"> 
-                                <p><a href="/users/detalleUsuario/id/<%= usuario.id %>"><%= usuario.nombre %></a></p>
-                                <% if (locals.user !=undefined && usuario.id == user.id) { %>
-                                    <div>
+                                <p><a href="/users/detalleUsuario/id/<%= posteo.clienteId %>"><%= usuario.nombre %></a></p>
+                                <% if (locals.user !=undefined && posteo.clienteId == user.id) { %>
+                                    <div class="separar">
                                         <a href="/post/deletePost/id/<%= idPost %>"><i class="fa-regular fa-trash-can fa-xl" style="color: red;"></i></a>
                                         <a href="/post/editPost/id/<%= idPost %>"><i class="fa-regular fa-pen-to-square fa-xl" style="color: red;"></i></a></div>
                                 <% } %> 

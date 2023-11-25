@@ -12,6 +12,6 @@ router.get('/logout', mainController.logout);
 router.get('/registro', mainController.registro);
 router.post('/registro', mainController.store); 
 
-router.get('/busqueda', mainController.busqueda);
+router.get('/resultadoBusqueda', mainController.busqueda);
 
 module.exports = router;

@@ -42,6 +42,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     width: 300px;
+    color: white;
 }
 .search input {
     border: none;
@@ -168,6 +169,8 @@ main {
     background: #27313b;
     padding: 10px 10px;
     color: white;
+    flex-direction: column;
+    position: fixed;
     
 }
 .social li {
@@ -343,4 +346,20 @@ form{
 }
 h1{
     color: white;
+}
+
+.holaUsuario{
+    color: white;
+}
+
+.search-input{
+    color: white;
+}
+
+.separar{
+    padding-left: 10px;
+}
+
+.mensaje-error{
+    background-color: white;
 }
