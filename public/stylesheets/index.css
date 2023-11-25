@@ -135,7 +135,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    background-color: #181F25;
+    background-color:black;
 }
 .post-reacciones li{
     margin-right: 10px;
@@ -201,20 +201,20 @@ main {
     width: 34%;
 }
 .comments div {
-    margin-top: 20px;
+    margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px solid #ddd;
+    border-top: 2px solid #ddd;
 }
 .comment {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .comment img {
     margin-right: 10px;
-    border-radius: 90%;
+    border-radius: 80%;
     padding: 1px;
    justify-content: baseline;
 }
@@ -235,20 +235,21 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: transparent;
 
 }
 .comment-form input {
     margin-bottom: 10px;
-    height: 50px;
+    height: 30px;
+    width: 50%;
     border-radius: 15px;
-  
-    outline-width: 0;
     color:#777
 }
 .comment-form button {
     padding: 5px ;
+    width: 50%;
     background-color:rgb(14, 114, 114);
-    border-radius: 15px;
+    border-radius: 10px;
     color: #fff;
 }
 .comment-form button:hover {
@@ -258,9 +259,17 @@ main {
 .fa-heart{
     color: red;
 }
-
+a.follow{
+    background-color: green;
+    color: white;
+}
 .post-comentarios{
     color: white;
+}
+p{
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .sin-resultados{
@@ -268,7 +277,13 @@ main {
 }
 
 /* detalle usuario */
+p{
+    align-items: center;
+}
 
+div.user-detail.container{
+    background-color: #27313b;
+}
 .user-detail{
     display: flex;
     flex-direction: column;
@@ -334,7 +349,9 @@ main {
     padding-right: 4%;
     font-size: 100%;
 }
-
+section.right{
+    background-color: black;
+}
 /* Register */
 form{
     background-color: #030303;
