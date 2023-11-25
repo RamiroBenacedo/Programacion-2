@@ -11,7 +11,7 @@
         <h1>Registrate</h1>
         <form action= "/registro" method="POST">
             <% if (locals.errors) { %>
-                <p class="mensaje-error"><%= locals.errors.message %></p>
+                <p class="mensajee-error"><%= locals.errors.message %></p>
               <% } %>
             <label  for="email"> Email:</label>
             <input  type="email" class="input" id="email" name="email" value="" ><br>
